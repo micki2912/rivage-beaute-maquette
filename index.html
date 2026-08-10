@@ -428,9 +428,16 @@
     padding:.7rem 0; border-bottom:1px dotted color-mix(in srgb, var(--bg) 30%, transparent);
     font-size:.92rem;
   }
-  .feature-price .row:last-child{ border-bottom:none; }
+  .feature-price .row:last-of-type{ border-bottom:none; }
   .feature-price .price{ font-variant-numeric:tabular-nums; font-weight:500; }
   .feature-price .highlight{ color:var(--accent-2); }
+  .feature-price .btn{
+    width:100%; margin-top:1.4rem;
+  }
+  .btn.light{
+    background:var(--bg); border-color:var(--bg); color:var(--ink);
+  }
+  .btn.light:hover{ background:var(--accent-2); border-color:var(--accent-2); color:var(--ink); }
 
   /* ---------- products ---------- */
   .brand-list{ border-top:1px solid var(--line); }
@@ -768,6 +775,7 @@
         <div class="feature-price">
           <div class="row"><span>Pédicure simple</span><span class="price">75.–</span></div>
           <div class="row"><span>Pédicure &amp; vernis semi-permanent</span><span class="price highlight">90.–</span></div>
+          <a href="tel:+41798382223" class="btn light">Prendre rendez-vous</a>
         </div>
       </div>
     </div>
@@ -841,6 +849,7 @@
         <div class="feature-price">
           <div class="row"><span>Séance de 45 minutes</span><span class="price">70.–</span></div>
           <div class="row"><span>Cure de 8 séances<br><small>1ère séance offerte</small></span><span class="price highlight">480.–</span></div>
+          <a href="tel:+41798382223" class="btn light">Prendre rendez-vous</a>
         </div>
       </div>
     </div>
