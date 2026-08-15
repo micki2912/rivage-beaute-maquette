@@ -257,17 +257,42 @@
       });
     }
 
-    // ---- bon cadeau : montant libre ----
+    // ---- bon cadeau : montant libre, dans une fenêtre modale ----
+    var giftOpenBtn = document.getElementById('giftOpenBtn');
+    var giftModal = document.getElementById('giftModal');
+    var giftModalOverlay = document.getElementById('giftModalOverlay');
+    var giftModalClose = document.getElementById('giftModalClose');
     var giftInput = document.getElementById('giftAmount');
     var giftPresets = document.querySelectorAll('.gift-preset');
     var giftAddBtn = document.getElementById('giftAddBtn');
-    if(giftInput && giftAddBtn){
+
+    if(giftOpenBtn && giftModal){
+      function openGiftModal(){
+        giftModalOverlay.classList.add('is-open');
+        giftModal.classList.add('is-open');
+        giftModal.setAttribute('aria-hidden', 'false');
+        giftInput.focus();
+      }
+      function closeGiftModal(){
+        giftModalOverlay.classList.remove('is-open');
+        giftModal.classList.remove('is-open');
+        giftModal.setAttribute('aria-hidden', 'true');
+        giftOpenBtn.focus();
+      }
       function syncGiftPresets(){
         var val = giftInput.value;
         giftPresets.forEach(function(btn){
           btn.classList.toggle('is-active', btn.getAttribute('data-amount') === val);
         });
       }
+
+      giftOpenBtn.addEventListener('click', openGiftModal);
+      giftModalClose.addEventListener('click', closeGiftModal);
+      giftModalOverlay.addEventListener('click', closeGiftModal);
+      document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape' && giftModal.classList.contains('is-open')) closeGiftModal();
+      });
+
       giftPresets.forEach(function(btn){
         btn.addEventListener('click', function(){
           giftInput.value = btn.getAttribute('data-amount');
@@ -281,10 +306,14 @@
         var amount = Math.round(parseFloat(giftInput.value));
         if(!amount || amount <= 0){ giftInput.focus(); return; }
         addItem('Bon cadeau — CHF ' + amount, amount);
-        openCart();
         giftAddBtn.classList.add('is-added');
         giftAddBtn.textContent = 'Ajouté ✓';
-        setTimeout(function(){ giftAddBtn.classList.remove('is-added'); giftAddBtn.textContent = 'Ajouter au panier'; }, 1400);
+        setTimeout(function(){
+          giftAddBtn.classList.remove('is-added');
+          giftAddBtn.textContent = 'Ajouter au panier';
+          closeGiftModal();
+          openCart();
+        }, 700);
       });
     }
   }
