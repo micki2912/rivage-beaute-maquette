@@ -256,5 +256,36 @@
         window.location.href = buildOrderMailto(formData);
       });
     }
+
+    // ---- bon cadeau : montant libre ----
+    var giftInput = document.getElementById('giftAmount');
+    var giftPresets = document.querySelectorAll('.gift-preset');
+    var giftAddBtn = document.getElementById('giftAddBtn');
+    if(giftInput && giftAddBtn){
+      function syncGiftPresets(){
+        var val = giftInput.value;
+        giftPresets.forEach(function(btn){
+          btn.classList.toggle('is-active', btn.getAttribute('data-amount') === val);
+        });
+      }
+      giftPresets.forEach(function(btn){
+        btn.addEventListener('click', function(){
+          giftInput.value = btn.getAttribute('data-amount');
+          syncGiftPresets();
+        });
+      });
+      giftInput.addEventListener('input', syncGiftPresets);
+      syncGiftPresets();
+
+      giftAddBtn.addEventListener('click', function(){
+        var amount = Math.round(parseFloat(giftInput.value));
+        if(!amount || amount <= 0){ giftInput.focus(); return; }
+        addItem('Bon cadeau — CHF ' + amount, amount);
+        openCart();
+        giftAddBtn.classList.add('is-added');
+        giftAddBtn.textContent = 'Ajouté ✓';
+        setTimeout(function(){ giftAddBtn.classList.remove('is-added'); giftAddBtn.textContent = 'Ajouter au panier'; }, 1400);
+      });
+    }
   }
 })();
