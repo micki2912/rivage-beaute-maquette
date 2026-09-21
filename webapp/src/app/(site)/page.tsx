@@ -264,48 +264,6 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section id="produits">
-        <div className="wrap">
-          <div className="section-head">
-            <div>
-              <p className="eyebrow">Produits</p>
-              <h2>Des marques choisies, pas empilées.</h2>
-            </div>
-            <p className="lede">
-              Depuis plusieurs années, Rivage travaille avec un nombre restreint de marques professionnelles,
-              sélectionnées pour leur tenue autant que pour leur toucher.
-            </p>
-          </div>
-          <div className="brand-list">
-            <div className="brand-row">
-              <h3>JPROSSELET</h3>
-              <p className="desc-full">Système de soins suisse, formulé pour s&apos;adapter à chaque type de peau — la base des soins du visage chez Rivage.</p>
-              <p className="desc-short">Système de soins suisse, pour chaque type de peau.</p>
-            </div>
-            <div className="brand-row">
-              <h3>Artepil</h3>
-              <p className="desc-full">Cires et soins dédiés à l&apos;épilation, pensés pour limiter les irritations sur peaux sensibles.</p>
-              <p className="desc-short">Cires et soins épilation, douces pour peaux sensibles.</p>
-            </div>
-            <div className="brand-row">
-              <h3>Stagecolor</h3>
-              <p className="desc-full">Maquillage et couleur, pour prolonger l&apos;effet d&apos;un soin bien après le rendez-vous.</p>
-              <p className="desc-short">Maquillage et couleur, effet longue durée.</p>
-            </div>
-            <div className="brand-row">
-              <h3>OPI</h3>
-              <p className="desc-full">Vernis et soins des ongles, pour les manucures et pédicures avec ou sans couleur.</p>
-              <p className="desc-short">Vernis et soins des ongles, avec ou sans couleur.</p>
-            </div>
-            <div className="brand-row">
-              <h3>Forever Aloe</h3>
-              <p className="desc-full">Soins du corps et compléments à l&apos;aloe vera, pour prolonger le bien-être au-delà de l&apos;institut.</p>
-              <p className="desc-short">Soins du corps et compléments à l&apos;aloe vera.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section id="boutique">
         <div className="wrap">
           <div className="section-head">
@@ -318,6 +276,9 @@ export default async function HomePage() {
               facture.
             </p>
           </div>
+          <p className="brand-strip">
+            Marques utilisées à l&apos;institut : JPROSSELET, Artepil, Stagecolor, OPI, Forever Aloe.
+          </p>
           {featured.length > 0 && (
             <div className="shop-grid shop-grid-teaser">
               {featured.map((p) => (

@@ -2,116 +2,100 @@
 
 import { useEffect, useRef } from 'react'
 
-// Thin-line illustration of a face receiving a facial massage. Each stroke
-// "draws itself in" as the section scrolls through the viewport, the same
-// scroll-driven idea as the wave divider (see WaveDivider.tsx).
+// Thin-line illustration of a woman's face receiving a facial massage — the
+// hands loop through a gentle massaging motion once the illustration scrolls
+// into view (paused otherwise, and honors prefers-reduced-motion).
 export default function FaceMassageIllustration() {
   const svgRef = useRef<SVGSVGElement>(null)
 
   useEffect(() => {
     const svg = svgRef.current
     if (!svg) return
-    const paths = Array.from(svg.querySelectorAll('path'))
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 
-    const lengths = paths.map((p) => p.getTotalLength())
-    paths.forEach((p, i) => {
-      p.style.strokeDasharray = `${lengths[i]}`
-      p.style.strokeDashoffset = reduced ? '0' : `${lengths[i]}`
-    })
-
-    if (reduced) return
-
-    let frame: number | null = null
-
-    function update() {
-      frame = null
-      const section = svg!.closest('section')
-      if (!section) return
-      const r = section.getBoundingClientRect()
-      // 0 when the section's top just enters the viewport, 1 once it's scrolled past.
-      const progress = Math.min(1, Math.max(0, (window.innerHeight - r.top) / (window.innerHeight + r.height)))
-      const drawn = Math.min(1, progress * 1.6)
-
-      paths.forEach((p, i) => {
-        p.style.strokeDashoffset = `${lengths[i] * (1 - drawn)}`
-      })
-    }
-
-    function onScroll() {
-      if (frame === null) frame = requestAnimationFrame(update)
-    }
-
-    update()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    window.addEventListener('resize', onScroll)
-    return () => {
-      window.removeEventListener('scroll', onScroll)
-      window.removeEventListener('resize', onScroll)
-      if (frame !== null) cancelAnimationFrame(frame)
-    }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        svg.classList.toggle('in-view', entry.isIntersecting)
+      },
+      { threshold: 0.2 }
+    )
+    observer.observe(svg)
+    return () => observer.disconnect()
   }, [])
 
   return (
-    <svg
-      ref={svgRef}
-      className="face-illustration"
-      viewBox="0 0 220 380"
-      fill="none"
-      aria-hidden="true"
-    >
-      {/* face profile: forehead, nose, lips, chin, jaw, neck */}
+    <svg ref={svgRef} className="face-illustration" viewBox="0 0 240 260" fill="none" aria-hidden="true">
+      {/* face: front-facing oval, hairline, eyes, brows, nose, lips */}
       <path
-        d="M100 40
-           C 70 40, 55 70, 56 105
-           C 57 130, 62 138, 58 150
-           C 54 160, 66 165, 74 160
-           C 80 172, 78 186, 86 192
-           C 96 200, 92 210, 82 214
-           C 96 222, 112 218, 116 206
-           C 128 208, 138 200, 138 186
-           C 150 178, 152 160, 144 148
-           C 156 138, 158 112, 148 92
-           C 140 60, 122 40, 100 40 Z"
+        d="M120 24
+           C 84 24, 66 56, 66 92
+           C 66 118, 70 132, 66 148
+           C 62 164, 66 182, 78 196
+           C 90 212, 104 222, 120 222
+           C 136 222, 150 212, 162 196
+           C 174 182, 178 164, 174 148
+           C 170 132, 174 118, 174 92
+           C 174 56, 156 24, 120 24 Z"
         stroke="var(--accent)"
         strokeWidth="1.6"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      {/* eye + brow */}
-      <path
-        d="M78 118 C 84 113, 92 113, 97 118"
-        stroke="var(--accent)"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-      />
-      <path
-        d="M80 130 C 85 133, 91 133, 95 129"
-        stroke="var(--accent)"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-      />
-      {/* hand resting on the cheek, mid-massage */}
-      <path
-        d="M180 150
-           C 168 146, 156 150, 148 160
-           C 140 170, 130 176, 118 178
-           C 128 184, 140 182, 148 176
-           C 142 186, 136 196, 138 206
-           C 146 200, 152 190, 158 182
-           C 156 194, 158 204, 166 210
-           C 168 198, 170 188, 178 180
-           C 186 174, 192 164, 190 152
-           C 187 150, 183 149, 180 150 Z"
-        stroke="var(--accent)"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      {/* soft motion lines, suggesting the massage gesture */}
-      <path d="M40 175 C 50 172, 58 172, 66 176" stroke="var(--accent)" strokeWidth="1.2" strokeLinecap="round" />
-      <path d="M36 195 C 48 193, 58 194, 68 199" stroke="var(--accent)" strokeWidth="1.2" strokeLinecap="round" />
-      <path d="M42 215 C 52 214, 60 215, 68 219" stroke="var(--accent)" strokeWidth="1.2" strokeLinecap="round" />
+      <path d="M70 78 C 82 62, 100 58, 120 60" stroke="var(--accent)" strokeWidth="1.4" strokeLinecap="round" />
+      <path d="M170 78 C 158 62, 140 58, 120 60" stroke="var(--accent)" strokeWidth="1.4" strokeLinecap="round" />
+      {/* brows */}
+      <path d="M86 100 C 92 96, 100 96, 106 100" stroke="var(--accent)" strokeWidth="1.4" strokeLinecap="round" />
+      <path d="M134 100 C 140 96, 148 96, 154 100" stroke="var(--accent)" strokeWidth="1.4" strokeLinecap="round" />
+      {/* eyes */}
+      <path d="M88 112 C 93 108, 101 108, 106 112" stroke="var(--accent)" strokeWidth="1.4" strokeLinecap="round" />
+      <path d="M134 112 C 139 108, 147 108, 152 112" stroke="var(--accent)" strokeWidth="1.4" strokeLinecap="round" />
+      {/* nose */}
+      <path d="M120 108 C 118 122, 116 136, 112 144 C 114 149, 119 150, 123 148" stroke="var(--accent)" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+      {/* lips */}
+      <path d="M102 168 C 110 172, 130 172, 138 168" stroke="var(--accent)" strokeWidth="1.4" strokeLinecap="round" />
+      <path d="M104 174 C 112 178, 128 178, 136 174" stroke="var(--accent)" strokeWidth="1.4" strokeLinecap="round" />
+
+      {/* left hand, resting on / massaging the left cheek */}
+      <g className="massage-hand massage-hand-left">
+        <path
+          d="M30 150
+             C 20 142, 12 130, 14 116
+             C 15 108, 22 104, 28 108
+             C 26 98, 30 88, 38 86
+             C 44 84, 49 90, 49 97
+             C 52 90, 59 87, 65 91
+             C 70 94, 70 101, 67 107
+             C 74 107, 79 113, 78 120
+             C 77 128, 70 132, 63 131
+             C 66 140, 63 150, 55 154
+             C 46 158, 36 156, 30 150 Z"
+          stroke="var(--accent)"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </g>
+
+      {/* right hand, mirrored */}
+      <g className="massage-hand massage-hand-right">
+        <path
+          d="M210 150
+             C 220 142, 228 130, 226 116
+             C 225 108, 218 104, 212 108
+             C 214 98, 210 88, 202 86
+             C 196 84, 191 90, 191 97
+             C 188 90, 181 87, 175 91
+             C 170 94, 170 101, 173 107
+             C 166 107, 161 113, 162 120
+             C 163 128, 170 132, 177 131
+             C 174 140, 177 150, 185 154
+             C 194 158, 204 156, 210 150 Z"
+          stroke="var(--accent)"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </g>
     </svg>
   )
 }

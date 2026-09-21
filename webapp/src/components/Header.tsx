@@ -36,7 +36,6 @@ export default function Header() {
               <li><Link href="/#institut">Institut</Link></li>
               <li><Link href="/#pedicure">Pédicure</Link></li>
               <li><Link href="/#soins">Soins</Link></li>
-              <li><Link href="/#produits">Produits</Link></li>
               <li><Link href="/boutique">Boutique</Link></li>
               <li><Link href="/#contact">Contact</Link></li>
             </ul>
@@ -71,7 +70,6 @@ export default function Header() {
         <Link href="/#institut" onClick={() => setMenuOpen(false)}>Institut</Link>
         <Link href="/#pedicure" onClick={() => setMenuOpen(false)}>Pédicure</Link>
         <Link href="/#soins" onClick={() => setMenuOpen(false)}>Soins</Link>
-        <Link href="/#produits" onClick={() => setMenuOpen(false)}>Produits</Link>
         <Link href="/boutique" onClick={() => setMenuOpen(false)}>Boutique</Link>
         <Link href="/#cadeau" onClick={() => setMenuOpen(false)}>Bons cadeaux</Link>
         <Link href="/#contact" onClick={() => setMenuOpen(false)}>Contact</Link>
