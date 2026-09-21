@@ -85,6 +85,7 @@ export default function ProductForm({
           }}
         />
         {preview && (
+          // eslint-disable-next-line @next/next/no-img-element -- live local file preview via blob: URL, not compatible with next/image
           <img src={preview} alt="" className="admin-image-preview" />
         )}
       </div>

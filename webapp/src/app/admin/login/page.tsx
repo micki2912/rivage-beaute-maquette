@@ -2,6 +2,7 @@
 
 import { useActionState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { login } from '@/app/admin/actions'
 
 export default function LoginPage() {
@@ -11,8 +12,7 @@ export default function LoginPage() {
     <main className="admin-login">
       <form action={action} className="admin-login-card">
         <Link href="/" className="brand-mark" style={{ marginBottom: '1.5rem' }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className="brand-icon" src="/logo-butterfly.png" alt="" />
+          <Image className="brand-icon" src="/logo-butterfly.png" alt="" width={36} height={36} />
           <span className="brand-text">
             Rivage <em>Beauté</em>
           </span>
@@ -37,6 +37,10 @@ export default function LoginPage() {
         <button type="submit" className="btn" disabled={pending} style={{ width: '100%', marginTop: '.6rem' }}>
           {pending ? 'Connexion…' : 'Se connecter'}
         </button>
+
+        <Link href="/admin/forgot-password" className="admin-forgot-link">
+          Mot de passe oublié ?
+        </Link>
       </form>
     </main>
   )

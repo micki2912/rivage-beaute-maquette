@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useCart } from '@/components/CartContext'
 
 const BOOKING_URL =
@@ -25,8 +26,7 @@ export default function Header() {
       <header className={`nav${scrolled ? ' is-scrolled' : ''}`} id="siteNav">
         <div className="wrap">
           <Link href="/#top" className="brand-mark">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img className="brand-icon" src="/logo-butterfly.png" alt="" />
+            <Image className="brand-icon" src="/logo-butterfly.png" alt="" width={36} height={36} />
             <span className="brand-text">
               Rivage <em>Beauté</em>
             </span>

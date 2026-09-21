@@ -30,7 +30,8 @@ export async function updateSession(request: NextRequest) {
   )
 
   const path = request.nextUrl.pathname
-  const isLoginPage = path === '/admin/login'
+  const isPublicAdminPage =
+    path === '/admin/login' || path === '/admin/forgot-password' || path === '/admin/reset-password'
   const isAdminRoute = path.startsWith('/admin')
 
   // Fail closed: if Supabase can't be reached at all (misconfiguration, outage),
@@ -45,13 +46,13 @@ export async function updateSession(request: NextRequest) {
     console.error('Proxy: failed to verify Supabase session', err)
   }
 
-  if (isAdminRoute && !isLoginPage && !user) {
+  if (isAdminRoute && !isPublicAdminPage && !user) {
     const url = request.nextUrl.clone()
     url.pathname = '/admin/login'
     return NextResponse.redirect(url)
   }
 
-  if (isLoginPage && user) {
+  if (path === '/admin/login' && user) {
     const url = request.nextUrl.clone()
     url.pathname = '/admin'
     return NextResponse.redirect(url)

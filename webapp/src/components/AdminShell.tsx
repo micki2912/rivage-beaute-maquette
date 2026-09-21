@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { logout } from '@/app/admin/actions'
 
 export default function AdminShell({
@@ -12,7 +13,7 @@ export default function AdminShell({
     <main className="admin-shell">
       <header className="admin-topbar">
         <Link href="/admin" className="brand-mark small">
-          <img className="brand-icon" src="/logo-butterfly.png" alt="" />
+          <Image className="brand-icon" src="/logo-butterfly.png" alt="" width={36} height={36} />
           <span className="brand-text">
             Rivage <em>Beauté</em>
           </span>

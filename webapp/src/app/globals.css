@@ -820,6 +820,11 @@
   display:flex; flex-direction:column;
 }
 .admin-login-card h1{ font-size:1.6rem; margin-top:.4rem; }
+.admin-forgot-link{
+  display:block; text-align:center; margin-top:1.2rem;
+  font-size:.82rem; color:var(--ink-soft);
+}
+.admin-forgot-link:hover{ color:var(--accent); }
 .admin-error{
   color:#C0392B; font-size:.85rem; margin-top:.8rem; background:rgba(192,57,43,.08);
   border:1px solid rgba(192,57,43,.25); border-radius:2px; padding:.6rem .8rem;

@@ -3,6 +3,7 @@ import { getProducts, groupByCategory } from '@/lib/products'
 import { deleteProduct } from '@/app/admin/actions'
 import DeleteProductButton from '@/components/DeleteProductButton'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default async function AdminDashboard() {
   const products = await getProducts()
@@ -33,7 +34,7 @@ export default async function AdminDashboard() {
               <div key={p.id} className="admin-product-row">
                 <div className="admin-product-thumb">
                   {p.image_url ? (
-                    <img src={p.image_url} alt="" />
+                    <Image src={p.image_url} alt="" width={52} height={52} style={{ objectFit: 'cover' }} />
                   ) : (
                     <div className="admin-product-thumb-empty" />
                   )}

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import AddToCartButton from '@/components/AddToCartButton'
 import type { Product } from '@/lib/types'
 
@@ -6,7 +7,13 @@ export default function ProductCard({ product }: { product: Product }) {
     <div className="shop-card">
       {product.image_url ? (
         <div className="shop-swatch shop-swatch-photo">
-          <img src={product.image_url} alt="" />
+          <Image
+            src={product.image_url}
+            alt=""
+            fill
+            sizes="(max-width: 520px) 50vw, (max-width: 900px) 33vw, 25vw"
+            style={{ objectFit: 'cover' }}
+          />
         </div>
       ) : (
         <div className="shop-swatch" />

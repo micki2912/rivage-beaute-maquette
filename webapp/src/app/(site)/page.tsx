@@ -1,6 +1,8 @@
 import PriceGroup, { PriceRow } from '@/components/PriceGroup'
 import GiftModal from '@/components/GiftModal'
 import ProductCard from '@/components/ProductCard'
+import WaveDivider from '@/components/WaveDivider'
+import Image from 'next/image'
 import { getProducts } from '@/lib/products'
 import type { Product } from '@/lib/types'
 
@@ -57,10 +59,18 @@ export default async function HomePage() {
         </div>
       </section>
 
+      <WaveDivider />
+
       <section className="about" id="institut">
         <div className="wrap">
           <div className="about-portrait">
-            <img src="/beatrice.jpg" alt="Béatrice Eichenberger devant l'institut Rivage, à Praz" />
+            <Image
+              src="/beatrice.jpg"
+              alt="Béatrice Eichenberger devant l'institut Rivage, à Praz"
+              fill
+              sizes="(max-width: 900px) 90vw, 40vw"
+              style={{ objectFit: 'cover', objectPosition: 'center' }}
+            />
             <div className="cap"><span>Béatrice Eichenberger</span></div>
           </div>
           <div>
@@ -291,6 +301,7 @@ export default async function HomePage() {
       <section id="cadeau">
         <div className="wrap">
           <div className="gift">
+            {/* eslint-disable-next-line @next/next/no-img-element -- decorative watermark, fluid size (min(46vw,340px)) doesn't fit next/image's fixed layouts */}
             <img className="gift-mark" src="/logo-butterfly.png" alt="" aria-hidden="true" />
             <div>
               <p className="eyebrow">Bons cadeaux</p>
@@ -319,9 +330,12 @@ export default async function HomePage() {
           </div>
           <div className="contact-grid">
             <div className="contact-map">
-              <img
+              <Image
                 src="/map.jpg"
                 alt="Carte de localisation de l'institut Rivage à Praz, Vully, entre les lacs de Morat, Neuchâtel et Bienne"
+                fill
+                sizes="(max-width: 900px) 90vw, 420px"
+                style={{ objectFit: 'cover' }}
               />
               <a
                 className="map-link"

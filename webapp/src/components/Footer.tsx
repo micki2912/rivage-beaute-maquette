@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Footer() {
   return (
@@ -17,8 +18,7 @@ export default function Footer() {
           }}
         >
           <Link href="/#top" className="brand-mark small">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img className="brand-icon" src="/logo-butterfly.png" alt="" />
+            <Image className="brand-icon" src="/logo-butterfly.png" alt="" width={36} height={36} />
             <span className="brand-text">
               Rivage <em>Beauté</em>
             </span>
