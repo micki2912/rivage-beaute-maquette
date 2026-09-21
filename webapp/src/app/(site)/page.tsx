@@ -2,6 +2,7 @@ import PriceGroup, { PriceRow } from '@/components/PriceGroup'
 import GiftModal from '@/components/GiftModal'
 import ProductCard from '@/components/ProductCard'
 import WaveDivider from '@/components/WaveDivider'
+import FaceMassageIllustration from '@/components/FaceMassageIllustration'
 import Image from 'next/image'
 import { getProducts } from '@/lib/products'
 import type { Product } from '@/lib/types'
@@ -87,6 +88,7 @@ export default async function HomePage() {
       <WaveDivider />
 
       <section className="about" id="institut">
+        <FaceMassageIllustration />
         <div className="wrap">
           <div className="about-portrait">
             <Image
