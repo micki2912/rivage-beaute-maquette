@@ -4,7 +4,9 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Boutique en ligne — Rivage Beauté',
+  title: 'Boutique en ligne',
+  description:
+    "La gamme de soins professionnels JPROSSELET utilisée à l'institut Rivage, à commander en ligne : crèmes, sérums, masques et nettoyants.",
 }
 
 export const dynamic = 'force-dynamic'

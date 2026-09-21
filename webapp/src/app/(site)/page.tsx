@@ -5,9 +5,30 @@ import WaveDivider from '@/components/WaveDivider'
 import Image from 'next/image'
 import { getProducts } from '@/lib/products'
 import type { Product } from '@/lib/types'
+import { SITE_URL } from '@/lib/site'
 
 const BOOKING_URL =
   'https://booking.localsearch.ch/bookings/institut-de-beaute-onglerie-rivage-pour-elle-lui/services?locale=fr'
+
+// Schema.org structured data — helps Google understand this as a local beauty
+// institute (name, address, phone) for local search / Maps results.
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'BeautySalon',
+  name: 'Institut Rivage',
+  image: `${SITE_URL}/video-poster.jpg`,
+  url: SITE_URL,
+  telephone: '+41798382223',
+  email: 'rivage@bluewin.ch',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Route principale 140a',
+    postalCode: '1788',
+    addressLocality: 'Praz (Vully)',
+    addressCountry: 'CH',
+  },
+  priceRange: 'CHF',
+}
 
 // New pick of products on every visit/refresh, rather than a cached static page.
 export const dynamic = 'force-dynamic'
@@ -23,6 +44,10 @@ export default async function HomePage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <section className="hero">
         <div className="wrap">
           <div>
