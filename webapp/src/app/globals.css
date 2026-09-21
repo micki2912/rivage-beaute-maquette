@@ -310,23 +310,6 @@
     display:block; width:100%; height:40px;
   }
 
-  /* ---------- facial massage scroll illustration ---------- */
-  .massage-scroll-section{ position:relative; height:220vh; background:var(--bg); }
-  .massage-scroll-sticky{
-    position:sticky; top:0; height:100vh;
-    display:flex; align-items:center; justify-content:center;
-    overflow:hidden;
-  }
-  .massage-scroll-svg{ width:min(46vw, 340px); height:auto; }
-  @media (max-width: 640px){
-    .massage-scroll-section{ height:180vh; }
-    .massage-scroll-svg{ width:min(75vw, 320px); }
-  }
-  @media (prefers-reduced-motion: reduce){
-    .massage-scroll-section{ height:auto; }
-    .massage-scroll-sticky{ position:relative; height:auto; padding-block:3rem; }
-  }
-
   /* ---------- section shell ---------- */
   section{ padding-block:clamp(3.5rem, 7vw, 6rem); }
   .section-head{
