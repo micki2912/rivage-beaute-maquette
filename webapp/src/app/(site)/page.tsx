@@ -118,7 +118,13 @@ export default async function HomePage() {
               </div>
               <div>
                 <p className="eyebrow">Rythme</p>
-                <p>Uniquement sur rendez-vous — par téléphone ou WhatsApp.</p>
+                <p>
+                  Uniquement sur rendez-vous — par téléphone ou{' '}
+                  <a href="https://wa.me/41798382223" target="_blank" rel="noopener">
+                    WhatsApp
+                  </a>
+                  .
+                </p>
               </div>
             </div>
           </div>
@@ -376,9 +382,20 @@ export default async function HomePage() {
                 <dt>Adresse</dt>
                 <dd>Institut Rivage<br />Route principale 140a<br />1788 Praz (Vully), Suisse</dd>
                 <dt>Téléphone</dt>
-                <dd><a href="tel:+41798382223">079 838 22 23</a> — également sur WhatsApp</dd>
+                <dd>
+                  <a href="tel:+41798382223">079 838 22 23</a> — également sur{' '}
+                  <a href="https://wa.me/41798382223" target="_blank" rel="noopener">
+                    WhatsApp
+                  </a>
+                </dd>
                 <dt>E-mail</dt>
                 <dd><a href="mailto:rivage@bluewin.ch">rivage@bluewin.ch</a></dd>
+                <dt>Avis</dt>
+                <dd>
+                  <a href="https://share.google/ACTIXfR3yiheV3YTY" target="_blank" rel="noopener">
+                    Voir nos avis Google ★ 4,85/5
+                  </a>
+                </dd>
                 <dt>Horaires</dt>
                 <dd>Uniquement sur rendez-vous</dd>
                 <dt>Instagram</dt>

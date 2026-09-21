@@ -28,6 +28,11 @@ export default function Footer() {
             <li><Link href="/#soins">Soins</Link></li>
             <li><Link href="/boutique">Boutique</Link></li>
             <li><Link href="/#contact">Contact</Link></li>
+            <li>
+              <a href="https://share.google/ACTIXfR3yiheV3YTY" target="_blank" rel="noopener">
+                Avis Google
+              </a>
+            </li>
           </ul>
           <p>
             © 2026 Institut Rivage, Praz · <Link href="/admin">Espace pro</Link>
