@@ -29,7 +29,9 @@ export default function Footer() {
             <li><Link href="/boutique">Boutique</Link></li>
             <li><Link href="/#contact">Contact</Link></li>
           </ul>
-          <p>© 2026 Institut Rivage, Praz</p>
+          <p>
+            © 2026 Institut Rivage, Praz · <Link href="/admin">Espace pro</Link>
+          </p>
         </div>
       </div>
     </footer>
