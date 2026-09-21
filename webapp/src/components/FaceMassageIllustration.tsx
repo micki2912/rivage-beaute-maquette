@@ -2,9 +2,11 @@
 
 import { useEffect, useRef } from 'react'
 
-// Thin-line illustration of a woman's face receiving a facial massage — the
-// hands loop through a gentle massaging motion once the illustration scrolls
-// into view (paused otherwise, and honors prefers-reduced-motion).
+// Line-art illustration of a woman receiving a facial massage (eyes closed,
+// hair wrapped in a towel), traced from the reference the user provided.
+// Each finger animates independently once the illustration scrolls into
+// view, as a small rolling press — paused otherwise, and honors
+// prefers-reduced-motion.
 export default function FaceMassageIllustration() {
   const svgRef = useRef<SVGSVGElement>(null)
 
@@ -25,76 +27,93 @@ export default function FaceMassageIllustration() {
 
   return (
     <svg ref={svgRef} className="face-illustration" viewBox="0 0 240 260" fill="none" aria-hidden="true">
-      {/* face: front-facing oval, hairline, eyes, brows, nose, lips */}
+      {/* towel wrap */}
       <path
-        d="M120 24
-           C 84 24, 66 56, 66 92
-           C 66 118, 70 132, 66 148
-           C 62 164, 66 182, 78 196
-           C 90 212, 104 222, 120 222
-           C 136 222, 150 212, 162 196
-           C 174 182, 178 164, 174 148
-           C 170 132, 174 118, 174 92
-           C 174 56, 156 24, 120 24 Z"
+        d="M92 30 C 104 16, 122 10, 138 16 C 150 20, 148 28, 140 30
+           C 152 34, 162 44, 160 56 C 172 50, 182 58, 180 68
+           C 178 78, 168 80, 160 76 C 150 92, 132 98, 118 92"
+        stroke="var(--accent)"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path d="M96 60 C 104 48, 116 42, 128 44" stroke="var(--accent)" strokeWidth="1.3" strokeLinecap="round" />
+
+      {/* face + jaw, chin, neck, shoulders */}
+      <path
+        d="M84 66 C 78 84, 76 100, 78 116
+           C 80 134, 86 150, 98 162
+           C 106 170, 114 176, 122 176
+           C 130 176, 138 170, 146 162
+           C 158 150, 164 134, 166 116
+           C 168 100, 166 84, 160 66"
         stroke="var(--accent)"
         strokeWidth="1.6"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <path d="M70 78 C 82 62, 100 58, 120 60" stroke="var(--accent)" strokeWidth="1.4" strokeLinecap="round" />
-      <path d="M170 78 C 158 62, 140 58, 120 60" stroke="var(--accent)" strokeWidth="1.4" strokeLinecap="round" />
-      {/* brows */}
-      <path d="M86 100 C 92 96, 100 96, 106 100" stroke="var(--accent)" strokeWidth="1.4" strokeLinecap="round" />
-      <path d="M134 100 C 140 96, 148 96, 154 100" stroke="var(--accent)" strokeWidth="1.4" strokeLinecap="round" />
-      {/* eyes */}
-      <path d="M88 112 C 93 108, 101 108, 106 112" stroke="var(--accent)" strokeWidth="1.4" strokeLinecap="round" />
-      <path d="M134 112 C 139 108, 147 108, 152 112" stroke="var(--accent)" strokeWidth="1.4" strokeLinecap="round" />
-      {/* nose */}
-      <path d="M120 108 C 118 122, 116 136, 112 144 C 114 149, 119 150, 123 148" stroke="var(--accent)" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-      {/* lips */}
-      <path d="M102 168 C 110 172, 130 172, 138 168" stroke="var(--accent)" strokeWidth="1.4" strokeLinecap="round" />
-      <path d="M104 174 C 112 178, 128 178, 136 174" stroke="var(--accent)" strokeWidth="1.4" strokeLinecap="round" />
+      <path
+        d="M96 172 C 92 186, 84 198, 70 208"
+        stroke="var(--accent)"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M148 172 C 152 186, 160 198, 174 208"
+        stroke="var(--accent)"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
 
-      {/* left hand, resting on / massaging the left cheek */}
+      {/* brows */}
+      <path d="M92 108 C 98 102, 108 100, 116 104" stroke="var(--accent)" strokeWidth="1.4" strokeLinecap="round" />
+      <path d="M128 104 C 136 100, 146 102, 152 108" stroke="var(--accent)" strokeWidth="1.4" strokeLinecap="round" />
+
+      {/* closed eyes with lashes */}
+      <path d="M92 122 C 98 126, 106 126, 112 121" stroke="var(--accent)" strokeWidth="1.4" strokeLinecap="round" />
+      <path d="M110 122 L 114 126 M 108 124 L 111 129" stroke="var(--accent)" strokeWidth="1" strokeLinecap="round" />
+      <path d="M132 121 C 138 126, 146 126, 152 122" stroke="var(--accent)" strokeWidth="1.4" strokeLinecap="round" />
+      <path d="M130 122 L 126 126 M 132 124 L 129 129" stroke="var(--accent)" strokeWidth="1" strokeLinecap="round" />
+
+      {/* nose */}
+      <path
+        d="M122 108 C 121 122, 118 134, 114 140 C 116 145, 120 146, 124 144 C 128 146, 132 145, 134 140"
+        stroke="var(--accent)"
+        strokeWidth="1.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+
+      {/* lips */}
+      <path d="M104 156 C 112 152, 132 152, 140 156" stroke="var(--accent)" strokeWidth="1.4" strokeLinecap="round" />
+      <path d="M106 158 C 114 163, 130 163, 138 158" stroke="var(--accent)" strokeWidth="1.4" strokeLinecap="round" />
+
+      {/* left hand: wrist/palm + three independently-animated fingers */}
       <g className="massage-hand massage-hand-left">
         <path
-          d="M30 150
-             C 20 142, 12 130, 14 116
-             C 15 108, 22 104, 28 108
-             C 26 98, 30 88, 38 86
-             C 44 84, 49 90, 49 97
-             C 52 90, 59 87, 65 91
-             C 70 94, 70 101, 67 107
-             C 74 107, 79 113, 78 120
-             C 77 128, 70 132, 63 131
-             C 66 140, 63 150, 55 154
-             C 46 158, 36 156, 30 150 Z"
+          d="M8 120 C 30 108, 52 100, 72 112 C 78 116, 80 122, 76 128 C 92 132, 96 146, 88 154"
           stroke="var(--accent)"
           strokeWidth="1.6"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
+        <path className="massage-finger" style={{ transformOrigin: '76px 112px' }} d="M72 108 C 76 116, 78 124, 76 132" stroke="var(--accent)" strokeWidth="1.4" strokeLinecap="round" />
+        <path className="massage-finger" style={{ animationDelay: '.15s', transformOrigin: '84px 122px' }} d="M82 108 C 86 118, 88 130, 84 140" stroke="var(--accent)" strokeWidth="1.4" strokeLinecap="round" />
+        <path className="massage-finger" style={{ animationDelay: '.3s', transformOrigin: '92px 132px' }} d="M90 114 C 94 124, 95 136, 90 148" stroke="var(--accent)" strokeWidth="1.4" strokeLinecap="round" />
       </g>
 
       {/* right hand, mirrored */}
       <g className="massage-hand massage-hand-right">
         <path
-          d="M210 150
-             C 220 142, 228 130, 226 116
-             C 225 108, 218 104, 212 108
-             C 214 98, 210 88, 202 86
-             C 196 84, 191 90, 191 97
-             C 188 90, 181 87, 175 91
-             C 170 94, 170 101, 173 107
-             C 166 107, 161 113, 162 120
-             C 163 128, 170 132, 177 131
-             C 174 140, 177 150, 185 154
-             C 194 158, 204 156, 210 150 Z"
+          d="M232 120 C 210 108, 188 100, 168 112 C 162 116, 160 122, 164 128 C 148 132, 144 146, 152 154"
           stroke="var(--accent)"
           strokeWidth="1.6"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
+        <path className="massage-finger" style={{ transformOrigin: '164px 112px' }} d="M168 108 C 164 116, 162 124, 164 132" stroke="var(--accent)" strokeWidth="1.4" strokeLinecap="round" />
+        <path className="massage-finger" style={{ animationDelay: '.15s', transformOrigin: '156px 122px' }} d="M158 108 C 154 118, 152 130, 156 140" stroke="var(--accent)" strokeWidth="1.4" strokeLinecap="round" />
+        <path className="massage-finger" style={{ animationDelay: '.3s', transformOrigin: '148px 132px' }} d="M150 114 C 146 124, 145 136, 150 148" stroke="var(--accent)" strokeWidth="1.4" strokeLinecap="round" />
       </g>
     </svg>
   )

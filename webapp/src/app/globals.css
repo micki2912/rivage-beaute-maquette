@@ -341,20 +341,14 @@
     pointer-events:none;
   }
   @media (min-width: 1400px){ .face-illustration{ display:block; } }
-  .massage-hand{ transform-origin:center; transform-box:fill-box; }
-  .face-illustration.in-view .massage-hand-left{ animation:massage-left 2.6s ease-in-out infinite; }
-  .face-illustration.in-view .massage-hand-right{ animation:massage-right 2.6s ease-in-out infinite; }
-  @keyframes massage-left{
-    0%, 100%{ transform:rotate(0deg) translate(0, 0); }
-    50%{ transform:rotate(-6deg) translate(-2px, 2px); }
-  }
-  @keyframes massage-right{
-    0%, 100%{ transform:rotate(0deg) translate(0, 0); }
-    50%{ transform:rotate(6deg) translate(2px, 2px); }
+  .massage-finger{ transform-box:fill-box; }
+  .face-illustration.in-view .massage-finger{ animation:finger-press 1.8s ease-in-out infinite; }
+  @keyframes finger-press{
+    0%, 100%{ transform:scale(1) translateY(0); }
+    40%{ transform:scale(0.94) translateY(1.5px); }
   }
   @media (prefers-reduced-motion: reduce){
-    .face-illustration.in-view .massage-hand-left,
-    .face-illustration.in-view .massage-hand-right{ animation:none; }
+    .face-illustration.in-view .massage-finger{ animation:none; }
   }
   .about .wrap{
     display:grid; grid-template-columns: .85fr 1.15fr; gap:clamp(2.5rem, 6vw, 5.5rem);
