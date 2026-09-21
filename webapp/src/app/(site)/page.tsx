@@ -1,10 +1,24 @@
 import PriceGroup, { PriceRow } from '@/components/PriceGroup'
 import GiftModal from '@/components/GiftModal'
+import ProductCard from '@/components/ProductCard'
+import { getProducts } from '@/lib/products'
+import type { Product } from '@/lib/types'
 
 const BOOKING_URL =
   'https://booking.localsearch.ch/bookings/institut-de-beaute-onglerie-rivage-pour-elle-lui/services?locale=fr'
 
-export default function HomePage() {
+// New pick of products on every visit/refresh, rather than a cached static page.
+export const dynamic = 'force-dynamic'
+
+function pickRandom(products: Product[], count: number) {
+  const shuffled = [...products].sort(() => Math.random() - 0.5)
+  return shuffled.slice(0, count)
+}
+
+export default async function HomePage() {
+  const products = await getProducts()
+  const featured = pickRandom(products, 4)
+
   return (
     <>
       <section className="hero">
@@ -261,6 +275,13 @@ export default function HomePage() {
               facture.
             </p>
           </div>
+          {featured.length > 0 && (
+            <div className="shop-grid shop-grid-teaser">
+              {featured.map((p) => (
+                <ProductCard key={p.id} product={p} />
+              ))}
+            </div>
+          )}
           <div className="shop-cta">
             <a href="/boutique" className="btn ghost">Voir la boutique complète</a>
           </div>
