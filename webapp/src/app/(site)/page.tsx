@@ -2,6 +2,7 @@ import PriceGroup, { PriceRow } from '@/components/PriceGroup'
 import GiftModal from '@/components/GiftModal'
 import ProductCard from '@/components/ProductCard'
 import WaveDivider from '@/components/WaveDivider'
+import FacialMassageScroll from '@/components/FacialMassageScroll'
 import Image from 'next/image'
 import { getProducts } from '@/lib/products'
 import type { Product } from '@/lib/types'
@@ -83,6 +84,8 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
+      <FacialMassageScroll />
 
       <WaveDivider />
 
