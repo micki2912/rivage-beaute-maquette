@@ -10,13 +10,18 @@ export default function ProductForm({
   product,
   action,
   submitLabel,
+  categories,
 }: {
   product?: Product
   action: (state: ActionState, formData: FormData) => Promise<ActionState>
   submitLabel: string
+  categories: string[]
 }) {
   const [state, formAction, pending] = useActionState(action, undefined)
   const [preview, setPreview] = useState<string | null>(product?.image_url ?? null)
+  const [addingCategory, setAddingCategory] = useState(
+    categories.length === 0 || (product ? !categories.includes(product.category) : false)
+  )
 
   return (
     <form action={formAction} className="admin-form" encType="multipart/form-data">
@@ -32,7 +37,33 @@ export default function ProductForm({
         </div>
         <div>
           <label htmlFor="category">Catégorie</label>
-          <input id="category" name="category" type="text" required defaultValue={product?.category ?? 'Autres'} />
+          {addingCategory ? (
+            <input
+              id="category"
+              name="category"
+              type="text"
+              required
+              autoFocus
+              placeholder="Nom de la nouvelle catégorie"
+              defaultValue={product && !categories.includes(product.category) ? product.category : ''}
+            />
+          ) : (
+            <select id="category" name="category" required defaultValue={product?.category ?? categories[0]}>
+              {categories.map((c) => (
+                <option key={c} value={c}>
+                  {c}
+                </option>
+              ))}
+            </select>
+          )}
+          <button
+            type="button"
+            onClick={() => setAddingCategory((v) => !v)}
+            className="admin-link-btn"
+            disabled={addingCategory && categories.length === 0}
+          >
+            {addingCategory ? (categories.length > 0 ? '← Choisir une catégorie existante' : '') : '+ Ajouter une catégorie'}
+          </button>
         </div>
       </div>
 

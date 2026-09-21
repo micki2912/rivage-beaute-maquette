@@ -30,6 +30,10 @@ export async function getProduct(id: string): Promise<Product | null> {
   return data
 }
 
+export function getCategories(products: Product[]): string[] {
+  return Array.from(new Set(products.map((p) => p.category))).sort()
+}
+
 export function groupByCategory(products: Product[]) {
   const groups = new Map<string, Product[]>()
   for (const p of products) {

@@ -797,6 +797,17 @@
 }
 .form-row textarea:focus{ outline:2px solid var(--accent); outline-offset:1px; border-color:var(--accent); }
 .form-row input[type="file"]{ padding:.5rem 0; border:none; background:none; }
+.form-row select{
+  width:100%; padding:.65rem .8rem; border:1px solid var(--line-strong);
+  border-radius:2px; background:var(--bg); color:var(--ink);
+  font-family:inherit; font-size:.92rem;
+}
+.form-row select:focus{ outline:2px solid var(--accent); outline-offset:1px; border-color:var(--accent); }
+.admin-link-btn{
+  background:none; border:none; padding:0; margin-top:.5rem;
+  font-size:.8rem; color:var(--accent); text-decoration:underline; cursor:pointer;
+}
+.admin-link-btn:disabled{ display:none; }
 
 .admin-login{
   min-height:100vh; display:flex; align-items:center; justify-content:center;
