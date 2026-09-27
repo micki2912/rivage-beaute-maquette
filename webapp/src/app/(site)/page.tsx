@@ -145,6 +145,10 @@ export default async function HomePage() {
                 Une pédicure diplômée va au-delà du vernis — un vrai soin technique et précis, pensé pour des
                 pieds qui portent le poids de toute une journée, pas seulement pour la couleur.
               </p>
+              <p className="pickup-note">
+                Un souci pour vous déplacer ? Sur demande, je viens vous chercher à votre domicile, je
+                m&apos;occupe de vos pieds à l&apos;institut, puis je vous raccompagne chez vous.
+              </p>
             </div>
             <div className="feature-price">
               <div className="row"><span>Pédicure simple</span><span className="price">85.–</span></div>
