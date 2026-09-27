@@ -12,12 +12,9 @@ export default function CartDrawer() {
     e.preventDefault()
     if (names.length === 0) return
     const data = new FormData(e.currentTarget)
-    const firstname = String(data.get('firstname') || '').trim()
-    const lastname = String(data.get('lastname') || '').trim()
+    const fullname = String(data.get('fullname') || '').trim()
     const phone = String(data.get('phone') || '').trim()
     const address = String(data.get('address') || '').trim()
-    const zip = String(data.get('zip') || '').trim()
-    const city = String(data.get('city') || '').trim()
 
     const lines = names.map(
       (name) => `- ${name} x${cart[name].qty} — ${money(cart[name].qty * cart[name].price)} CHF`
@@ -29,7 +26,7 @@ export default function CartDrawer() {
       encodeURIComponent(money(total)) +
       ' CHF' +
       '%0D%0A%0D%0ALivraison à :%0D%0A' +
-      encodeURIComponent(`${firstname} ${lastname}\n${address}\n${zip} ${city}`) +
+      encodeURIComponent(`${fullname}\n${address}`) +
       '%0D%0A%0D%0ATéléphone : ' +
       encodeURIComponent(phone) +
       '%0D%0A%0D%0APaiement souhaité : sur facture' +
@@ -89,12 +86,8 @@ export default function CartDrawer() {
           </div>
           <form className="checkout-form" onSubmit={handleSubmit}>
             <div className="form-row">
-              <label htmlFor="ckFirstname">Prénom</label>
-              <input id="ckFirstname" name="firstname" type="text" required autoComplete="given-name" />
-            </div>
-            <div className="form-row">
-              <label htmlFor="ckLastname">Nom</label>
-              <input id="ckLastname" name="lastname" type="text" required autoComplete="family-name" />
+              <label htmlFor="ckFullname">Nom complet</label>
+              <input id="ckFullname" name="fullname" type="text" required autoComplete="name" placeholder="Prénom et nom" />
             </div>
             <div className="form-row">
               <label htmlFor="ckPhone">Téléphone</label>
@@ -102,17 +95,14 @@ export default function CartDrawer() {
             </div>
             <div className="form-row">
               <label htmlFor="ckAddress">Adresse de livraison</label>
-              <input id="ckAddress" name="address" type="text" required autoComplete="street-address" placeholder="Rue et numéro" />
-            </div>
-            <div className="form-row two-col">
-              <div>
-                <label htmlFor="ckZip">NPA</label>
-                <input id="ckZip" name="zip" type="text" required autoComplete="postal-code" inputMode="numeric" placeholder="1788" />
-              </div>
-              <div>
-                <label htmlFor="ckCity">Ville</label>
-                <input id="ckCity" name="city" type="text" required autoComplete="address-level2" placeholder="Praz" />
-              </div>
+              <textarea
+                id="ckAddress"
+                name="address"
+                required
+                rows={2}
+                autoComplete="street-address"
+                placeholder="Rue et numéro, NPA, ville"
+              />
             </div>
             <button type="submit" className="btn" disabled={names.length === 0} style={{ width: '100%' }}>
               Envoyer ma demande de commande
