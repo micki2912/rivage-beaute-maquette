@@ -190,15 +190,21 @@ export default async function HomePage() {
                 Une pédicure diplômée va au-delà du vernis — un vrai soin technique et précis, pensé pour des
                 pieds qui portent le poids de toute une journée, pas seulement pour la couleur.
               </p>
-              <p className="pickup-note">
-                Un souci pour vous déplacer ? Sur demande, je viens vous chercher à votre domicile, je
-                m&apos;occupe de vos pieds à l&apos;institut, puis je vous raccompagne chez vous.
-              </p>
+              <p className="feature-list-title">Coupe et mise en beauté des ongles :</p>
+              <ul className="feature-list">
+                <li>Élimination de la corne</li>
+                <li>Traitement des cors</li>
+                <li>Correction des ongles incarnés</li>
+              </ul>
             </div>
             <div className="feature-price">
               <div className="row"><span>Pédicure simple</span><span className="price">85.–</span></div>
               <div className="row"><span>Pédicure &amp; vernis semi-permanent</span><span className="price highlight">95.–</span></div>
               <a href={BOOKING_URL} target="_blank" rel="noopener" className="btn light">Prendre rendez-vous</a>
+              <p className="pickup-note">
+                Un souci pour vous déplacer ? Sur demande, je viens vous chercher à votre domicile, je
+                m&apos;occupe de vos pieds à l&apos;institut, puis je vous raccompagne chez vous.
+              </p>
             </div>
           </div>
         </div>
