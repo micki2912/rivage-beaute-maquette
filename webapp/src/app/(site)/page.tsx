@@ -148,8 +148,8 @@ export default async function HomePage() {
               </p>
             </div>
             <div className="feature-price">
-              <div className="row"><span>Pédicure simple</span><span className="price">75.–</span></div>
-              <div className="row"><span>Pédicure &amp; vernis semi-permanent</span><span className="price highlight">90.–</span></div>
+              <div className="row"><span>Pédicure simple</span><span className="price">85.–</span></div>
+              <div className="row"><span>Pédicure &amp; vernis semi-permanent</span><span className="price highlight">95.–</span></div>
               <a href={BOOKING_URL} target="_blank" rel="noopener" className="btn light">Prendre rendez-vous</a>
             </div>
           </div>
@@ -208,14 +208,14 @@ export default async function HomePage() {
                 title="Pédicure"
                 visible={
                   <>
-                    <PriceRow name="Pédicure simple" price="75.–" />
-                    <PriceRow name="Pédicure & pose de vernis" price="85.–" />
+                    <PriceRow name="Pédicure simple" price="85.–" />
+                    <PriceRow name="Pédicure & pose de vernis" price="90.–" />
                   </>
                 }
                 extra={
                   <>
-                    <PriceRow name="Pédicure & vernis semi-permanent" price="90.–" />
-                    <PriceRow name="Vernis semi-permanent seul" price="45.–" />
+                    <PriceRow name="Pédicure & vernis semi-permanent" price="95.–" />
+                    <PriceRow name="Vernis semi-permanent seul" price="35.–" />
                   </>
                 }
               />
@@ -236,7 +236,7 @@ export default async function HomePage() {
                     <PriceRow name="Maillot brésilien" price="50.–" />
                     <PriceRow name="Lèvre supérieure" price="20.–" />
                     <PriceRow name="Visage complet" price="50.–" />
-                    <PriceRow name="Dos, épaules & torse (homme)" price="sur devis" />
+                    <PriceRow name="Dos, épaules & torse (homme)" price="selon la durée" />
                   </>
                 }
               />
