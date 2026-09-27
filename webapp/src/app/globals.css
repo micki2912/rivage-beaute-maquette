@@ -41,6 +41,8 @@
     --line-strong:#C3CEDA;
     --shadow: 0 30px 60px -35px rgba(11,20,36,.35);
     --wrap: 1120px;
+    --feature-bg:#0F2A57;
+    --feature-ink:#F3F6FA;
     color-scheme: light;
   }
   @media (prefers-color-scheme: dark){
@@ -55,6 +57,8 @@
       --line:#1E2833;
       --line-strong:#2C3A49;
       --shadow: 0 30px 60px -35px rgba(0,0,0,.6);
+      --feature-bg:#14315C;
+      --feature-ink:#F3F6FA;
       color-scheme: dark;
     }
   }
@@ -69,6 +73,8 @@
     --line:#1E2833;
     --line-strong:#2C3A49;
     --shadow: 0 30px 60px -35px rgba(0,0,0,.6);
+    --feature-bg:#14315C;
+    --feature-ink:#F3F6FA;
     color-scheme: dark;
   }
   :root[data-theme="light"]{
@@ -82,6 +88,8 @@
     --line:#DCE3EC;
     --line-strong:#C3CEDA;
     --shadow: 0 30px 60px -35px rgba(11,20,36,.35);
+    --feature-bg:#0F2A57;
+    --feature-ink:#F3F6FA;
     color-scheme: light;
   }
 
@@ -414,7 +422,7 @@
 
   /* ---------- pressotherapy feature ---------- */
   .feature{
-    background:var(--ink); color:var(--bg);
+    background:var(--feature-bg); color:var(--feature-ink);
     border-radius:4px;
     padding:clamp(2.2rem, 5vw, 4rem);
     display:grid; grid-template-columns:1.2fr .8fr; gap:clamp(2rem,5vw,4rem);
@@ -422,16 +430,16 @@
   }
   .feature .eyebrow{ color:var(--accent-2); }
   .feature .eyebrow::before{ background:var(--accent-2); }
-  .feature h2{ color:var(--bg); margin-top:.7rem; }
-  .feature p{ color:color-mix(in srgb, var(--bg) 78%, transparent); margin-top:1.1rem; }
+  .feature h2{ color:var(--feature-ink); margin-top:.7rem; }
+  .feature p{ color:color-mix(in srgb, var(--feature-ink) 78%, transparent); margin-top:1.1rem; }
   .feature.reverse .feature-price{ order:-1; }
   .feature-price{
-    border:1px solid color-mix(in srgb, var(--bg) 30%, transparent);
+    border:1px solid color-mix(in srgb, var(--feature-ink) 30%, transparent);
     padding:1.6rem;
   }
   .feature-price .row{
     display:flex; justify-content:space-between; gap:1rem;
-    padding:.7rem 0; border-bottom:1px dotted color-mix(in srgb, var(--bg) 30%, transparent);
+    padding:.7rem 0; border-bottom:1px dotted color-mix(in srgb, var(--feature-ink) 30%, transparent);
     font-size:.92rem;
   }
   .feature-price .row:last-of-type{ border-bottom:none; }
