@@ -745,7 +745,11 @@
   /* ---------- responsive ---------- */
   @media (max-width: 900px){
     .hero .wrap{ grid-template-columns:1fr; }
-    .hero-visual{ order:-1; }
+    .hero-visual{
+      order:-1;
+      width:100vw; margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw);
+      border-radius:0; border:none; box-shadow:none;
+    }
     .about .wrap{ grid-template-columns:1fr; }
     .about-portrait{ max-width:280px; }
     .menu-cols{ grid-template-columns:1fr; }
