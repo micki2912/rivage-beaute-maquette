@@ -27,6 +27,7 @@ export default function Footer() {
             <li><Link href="/#institut">Institut</Link></li>
             <li><Link href="/#soins">Soins</Link></li>
             <li><Link href="/boutique">Boutique</Link></li>
+            <li><Link href="/#faq">FAQ</Link></li>
             <li><Link href="/#contact">Contact</Link></li>
             <li>
               <a href="https://share.google/ACTIXfR3yiheV3YTY" target="_blank" rel="noopener">

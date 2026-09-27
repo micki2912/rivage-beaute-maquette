@@ -30,6 +30,47 @@ const structuredData = {
   priceRange: 'CHF',
 }
 
+const FAQ_ITEMS = [
+  {
+    q: 'Comment prendre rendez-vous ?',
+    a: 'Par téléphone, par WhatsApp, ou directement en ligne via notre système de réservation.',
+  },
+  {
+    q: 'Quels moyens de paiement acceptez-vous ?',
+    a: 'TWINT, facture ou espèces. Les paiements par carte ne sont pas proposés.',
+  },
+  {
+    q: "L'institut est-il facile d'accès ?",
+    a: 'Route principale 140a, à Praz (Vully) — à quinze minutes de la gare en transports publics, à trente minutes de Berne, Fribourg ou Neuchâtel en voiture.',
+  },
+  {
+    q: 'Je ne peux pas me déplacer pour ma pédicure, est-ce possible quand même ?',
+    a: "Oui — sur demande, Béatrice vient vous chercher à votre domicile, s'occupe de vos pieds à l'institut, puis vous raccompagne chez vous.",
+  },
+  {
+    q: 'Livrez-vous les produits de la boutique ?',
+    a: "Oui, à votre adresse, réglé sur facture — comme à l'institut.",
+  },
+  {
+    q: 'Proposez-vous des bons cadeaux ?',
+    a: "Oui, d'un montant libre, valables sur l'ensemble des soins de l'institut.",
+  },
+  {
+    q: 'Quelles marques de produits utilisez-vous ?',
+    a: 'Des gammes professionnelles suisses : JPROSSELET, Artepil, Stagecolor, OPI et Forever Aloe.',
+  },
+]
+
+const faqStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQ_ITEMS.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+}
+
 // New pick of products on every visit/refresh, rather than a cached static page.
 export const dynamic = 'force-dynamic'
 
@@ -47,6 +88,10 @@ export default async function HomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
       />
       <section className="hero">
         <div className="wrap">
@@ -311,6 +356,25 @@ export default async function HomePage() {
               </p>
             </div>
             <GiftModal />
+          </div>
+        </div>
+      </section>
+
+      <section id="faq">
+        <div className="wrap">
+          <div className="section-head">
+            <div>
+              <p className="eyebrow">Questions fréquentes</p>
+              <h2>Vous vous demandez peut-être...</h2>
+            </div>
+          </div>
+          <div className="faq-list">
+            {FAQ_ITEMS.map((item) => (
+              <details key={item.q} className="faq-item">
+                <summary>{item.q}</summary>
+                <p>{item.a}</p>
+              </details>
+            ))}
           </div>
         </div>
       </section>
