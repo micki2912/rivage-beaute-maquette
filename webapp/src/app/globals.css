@@ -426,7 +426,7 @@
     border-radius:4px;
     padding:clamp(2.2rem, 5vw, 4rem);
     display:grid; grid-template-columns:1.2fr .8fr; gap:clamp(2rem,5vw,4rem);
-    align-items:center;
+    align-items:stretch;
   }
   .feature .eyebrow{ color:var(--accent-2); }
   .feature .eyebrow::before{ background:var(--accent-2); }
@@ -440,6 +440,8 @@
   .feature-price{
     border:1px solid color-mix(in srgb, var(--feature-ink) 30%, transparent);
     padding:1.6rem;
+    display:flex; flex-direction:column; justify-content:center;
+    height:100%;
   }
   .feature-price .row{
     display:flex; justify-content:space-between; gap:1rem;
