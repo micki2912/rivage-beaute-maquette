@@ -142,9 +142,8 @@ export default async function HomePage() {
               <p className="eyebrow">Pédicure</p>
               <h2>Le soin des pieds, par une vraie pédicure diplômée.</h2>
               <p>
-                Une pédicure diplômée va au-delà du vernis : durillons, cors, ongles incarnés — un vrai soin
-                technique et précis, pensé pour des pieds qui portent le poids de toute une journée, pas
-                seulement pour la couleur.
+                Une pédicure diplômée va au-delà du vernis — un vrai soin technique et précis, pensé pour des
+                pieds qui portent le poids de toute une journée, pas seulement pour la couleur.
               </p>
             </div>
             <div className="feature-price">
