@@ -358,12 +358,6 @@ export default async function HomePage() {
                 </dd>
                 <dt>E-mail</dt>
                 <dd><a href="mailto:rivage@bluewin.ch">rivage@bluewin.ch</a></dd>
-                <dt>Avis</dt>
-                <dd>
-                  <a href="https://share.google/ACTIXfR3yiheV3YTY" target="_blank" rel="noopener">
-                    Voir nos avis Google ★ 4,85/5
-                  </a>
-                </dd>
                 <dt>Horaires</dt>
                 <dd>Uniquement sur rendez-vous</dd>
                 <dt>Instagram</dt>
@@ -371,7 +365,7 @@ export default async function HomePage() {
               </dl>
               <p className="eyebrow">Modes de paiement</p>
               <div className="pay-methods">
-                <span>TWINT</span><span>Facture</span>
+                <span>TWINT</span><span>Facture</span><span>Espèces</span>
               </div>
               <a href={BOOKING_URL} target="_blank" rel="noopener" className="btn contact-cta">Prendre rendez-vous</a>
             </div>
