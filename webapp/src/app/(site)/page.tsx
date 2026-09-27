@@ -110,7 +110,7 @@ export default async function HomePage() {
             <div className="facts-row">
               <div>
                 <p className="eyebrow">Expérience</p>
-                <p>Plus de trente-trois ans de pratique en soins esthétiques et pédicure médicale.</p>
+                <p>Plus de trente-trois ans de pratique en soins esthétiques et pédicure.</p>
               </div>
               <div>
                 <p className="eyebrow">Produits</p>
@@ -119,12 +119,20 @@ export default async function HomePage() {
               <div>
                 <p className="eyebrow">Rythme</p>
                 <p>
-                  Uniquement sur rendez-vous — par téléphone ou{' '}
+                  Uniquement sur rendez-vous — par téléphone,{' '}
                   <a href="https://wa.me/41798382223" target="_blank" rel="noopener">
                     WhatsApp
+                  </a>{' '}
+                  ou{' '}
+                  <a href={BOOKING_URL} target="_blank" rel="noopener">
+                    en ligne
                   </a>
                   .
                 </p>
+              </div>
+              <div>
+                <p className="eyebrow">Accessibilité</p>
+                <p>Une seule petite marche pour accéder à l&apos;institut.</p>
               </div>
             </div>
           </div>
