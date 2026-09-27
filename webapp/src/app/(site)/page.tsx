@@ -130,10 +130,6 @@ export default async function HomePage() {
                   .
                 </p>
               </div>
-              <div>
-                <p className="eyebrow">Accessibilité</p>
-                <p>Une seule petite marche pour accéder à l&apos;institut.</p>
-              </div>
             </div>
           </div>
         </div>
