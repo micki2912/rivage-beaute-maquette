@@ -27,6 +27,21 @@ const structuredData = {
     addressLocality: 'Praz (Vully)',
     addressCountry: 'CH',
   },
+  areaServed: [
+    'Praz',
+    'Sugiez',
+    'Nant',
+    'Môtier',
+    'Lugnorre',
+    'Salavaux',
+    'Vully-les-Lacs',
+    'Morat',
+    'Avenches',
+    'Kerzers',
+    'Ins',
+    'Gampelen',
+    'Cudrefin',
+  ],
   priceRange: 'CHF',
 }
 
@@ -41,7 +56,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "L'institut est-il facile d'accès ?",
-    a: 'Route principale 140a, à Praz (Vully) — à quinze minutes de la gare en transports publics, à trente minutes de Berne, Fribourg ou Neuchâtel en voiture.',
+    a: 'Route principale 140a, à Praz (Vully) — à quinze minutes de la gare en transports publics, facilement accessible depuis Sugiez, Nant, Môtier, Morat, Avenches, Kerzers et les autres villages du Vully.',
   },
   {
     q: 'Je ne peux pas me déplacer pour ma pédicure, est-ce possible quand même ?',
@@ -394,7 +409,8 @@ export default async function HomePage() {
             </div>
             <p className="lede">
               À quinze minutes de la gare en transports publics, à trente minutes de Berne, Fribourg ou
-              Neuchâtel en voiture.
+              Neuchâtel en voiture — facilement accessible depuis Sugiez, Nant, Môtier, Lugnorre, Salavaux,
+              Morat, Avenches, Kerzers, Ins, Gampelen et Cudrefin.
             </p>
           </div>
           <div className="contact-grid">

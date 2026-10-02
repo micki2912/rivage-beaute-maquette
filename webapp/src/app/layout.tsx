@@ -4,7 +4,7 @@ import './globals.css'
 
 const title = 'Rivage Beauté — Institut de bien-être, Praz (Vully)'
 const description =
-  "Institut de bien-être à Praz, entre les lacs de Morat, Neuchâtel et Bienne. Soins du visage, manucure, pédicure, pressothérapie, sur rendez-vous."
+  "Institut de beauté à Praz, au cœur du Vully, entre Morat, Avenches et Neuchâtel. Soins du visage, manucure, pédicure, pressothérapie, sur rendez-vous."
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
