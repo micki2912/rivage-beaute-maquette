@@ -3,9 +3,20 @@
 import { useState } from 'react'
 import { useCart } from '@/components/CartContext'
 
-export default function AddToCartButton({ name, price }: { name: string; price: number }) {
+const TEXT = { fr: { added: 'Ajouté ✓', add: 'Ajouter' }, de: { added: 'Hinzugefügt ✓', add: 'Hinzufügen' } } as const
+
+export default function AddToCartButton({
+  name,
+  price,
+  lang = 'fr',
+}: {
+  name: string
+  price: number
+  lang?: 'fr' | 'de'
+}) {
   const { addItem, openCart } = useCart()
   const [added, setAdded] = useState(false)
+  const t = TEXT[lang]
 
   return (
     <button
@@ -18,7 +29,7 @@ export default function AddToCartButton({ name, price }: { name: string; price: 
         setTimeout(() => setAdded(false), 1400)
       }}
     >
-      {added ? 'Ajouté ✓' : 'Ajouter'}
+      {added ? t.added : t.add}
     </button>
   )
 }

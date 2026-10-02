@@ -13,5 +13,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.8,
     },
+    {
+      url: `${SITE_URL}/de`,
+      changeFrequency: 'monthly',
+      priority: 1,
+    },
+    {
+      url: `${SITE_URL}/de/boutique`,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
   ]
 }

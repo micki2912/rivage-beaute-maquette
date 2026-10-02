@@ -5,18 +5,18 @@ import type { Metadata } from 'next'
 import { SITE_URL } from '@/lib/site'
 
 export const metadata: Metadata = {
-  title: 'Boutique en ligne',
+  title: { absolute: 'Online-Shop — Rivage Beauté' },
   description:
-    "La gamme de soins professionnels JPROSSELET utilisée à l'institut Rivage, à commander en ligne : crèmes, sérums, masques et nettoyants.",
+    'Die professionelle JPROSSELET-Pflegelinie des Institut Rivage, online bestellbar: Cremes, Seren, Masken und Reinigungsprodukte.',
   alternates: {
-    canonical: `${SITE_URL}/boutique`,
+    canonical: `${SITE_URL}/de/boutique`,
     languages: { 'fr-CH': `${SITE_URL}/boutique`, 'de-CH': `${SITE_URL}/de/boutique` },
   },
 }
 
 export const dynamic = 'force-dynamic'
 
-export default async function BoutiquePage() {
+export default async function BoutiquePageDE() {
   const products = await getProducts()
   const grouped = groupByCategory(products)
 
@@ -24,12 +24,12 @@ export default async function BoutiquePage() {
     <>
       <section className="shop-hero">
         <div className="wrap">
-          <Link href="/" className="back-link">← Retour au site</Link>
-          <p className="eyebrow">Boutique en ligne</p>
-          <h1>La gamme JPR/XC, en entier.</h1>
+          <Link href="/de" className="back-link">← Zurück zur Webseite</Link>
+          <p className="eyebrow">Online-Shop</p>
+          <h1>Die ganze JPR/XC-Linie.</h1>
           <p className="lede">
-            Le système de soin suisse utilisé à l&apos;institut, à emporter chez vous. Ajoutez vos produits au
-            panier, indiquez votre adresse — réglé sur facture, comme à l&apos;institut.
+            Das Schweizer Pflegesystem aus dem Institut, jetzt auch für zu Hause. Legen Sie Produkte in den
+            Warenkorb und geben Sie Ihre Adresse an — Zahlung per Rechnung, wie im Institut.
           </p>
         </div>
       </section>
@@ -37,7 +37,7 @@ export default async function BoutiquePage() {
       {grouped.length === 0 && (
         <section className="shop-category">
           <div className="wrap">
-            <p className="lede">La boutique est en cours de préparation — repassez bientôt.</p>
+            <p className="lede">Der Shop wird gerade vorbereitet — schauen Sie bald wieder vorbei.</p>
           </div>
         </section>
       )}
@@ -48,7 +48,7 @@ export default async function BoutiquePage() {
             <h2>{category}</h2>
             <div className="shop-grid">
               {items.map((p) => (
-                <ProductCard key={p.id} product={p} />
+                <ProductCard key={p.id} product={p} lang="de" />
               ))}
             </div>
           </div>

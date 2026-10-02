@@ -15,16 +15,21 @@ export function PriceRow({ name, note, price }: { name: string; note?: string; p
   )
 }
 
+const TEXT = { fr: { less: 'Voir moins', more: 'Voir plus' }, de: { less: 'Weniger anzeigen', more: 'Mehr anzeigen' } } as const
+
 export default function PriceGroup({
   title,
   visible,
   extra,
+  lang = 'fr',
 }: {
   title: string
   visible: React.ReactNode
   extra: React.ReactNode
+  lang?: 'fr' | 'de'
 }) {
   const [open, setOpen] = useState(false)
+  const t = TEXT[lang]
 
   return (
     <div className="menu-group">
@@ -34,7 +39,7 @@ export default function PriceGroup({
         {extra}
       </div>
       <button type="button" className={`menu-more${open ? ' is-open' : ''}`} onClick={() => setOpen((v) => !v)}>
-        {open ? 'Voir moins' : 'Voir plus'}
+        {open ? t.less : t.more}
       </button>
     </div>
   )

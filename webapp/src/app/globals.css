@@ -230,6 +230,11 @@
   .btn.small{ padding:.6rem 1.1rem; font-size:.75rem; }
 
   .nav-cta{ display:flex; align-items:center; gap:1.4rem; }
+  .lang-switch{
+    font-size:.78rem; font-weight:500; letter-spacing:.04em; color:var(--ink-soft);
+    border:1px solid var(--line-strong); border-radius:3px; padding:.3rem .55rem;
+  }
+  .lang-switch:hover{ color:var(--ink); border-color:var(--ink); }
 
   .menu-toggle{
     display:none;

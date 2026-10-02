@@ -6,6 +6,14 @@ import Image from 'next/image'
 import { getProducts } from '@/lib/products'
 import type { Product } from '@/lib/types'
 import { SITE_URL } from '@/lib/site'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: SITE_URL,
+    languages: { 'fr-CH': SITE_URL, 'de-CH': `${SITE_URL}/de` },
+  },
+}
 
 const BOOKING_URL =
   'https://booking.localsearch.ch/bookings/institut-de-beaute-onglerie-rivage-pour-elle-lui/services?locale=fr'
