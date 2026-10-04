@@ -223,8 +223,6 @@ export default async function HomePage() {
                 <li>Traitement des cors</li>
                 <li>Correction des ongles incarnés</li>
               </ul>
-              <p className="feature-note">Instruments professionnels stérilisés et lames à usage unique.</p>
-              <p className="feature-note">Pas de soins podologiques pour les patients à risque (p. ex. diabétiques).</p>
             </div>
             <div className="feature-price">
               <div className="row"><span>Pédicure simple</span><span className="price">85.–</span></div>
@@ -234,6 +232,8 @@ export default async function HomePage() {
                 Un souci pour vous déplacer ? Sur demande, je viens vous chercher à votre domicile, je
                 m&apos;occupe de vos pieds à l&apos;institut, puis je vous raccompagne chez vous.
               </p>
+              <p className="feature-note">Instruments professionnels stérilisés et lames à usage unique.</p>
+              <p className="feature-note">Pas de soins podologiques pour les patients à risque (p. ex. diabétiques).</p>
             </div>
           </div>
         </div>

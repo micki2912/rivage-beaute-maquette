@@ -231,8 +231,6 @@ export default async function HomePageDE() {
                 <li>Behandlung von Hühneraugen</li>
                 <li>Korrektur eingewachsener Nägel</li>
               </ul>
-              <p className="feature-note">Professionelle, sterilisierte Instrumente und Einwegklingen.</p>
-              <p className="feature-note">Keine podologischen Behandlungen für Risikopatienten (z. B. bei Diabetes).</p>
             </div>
             <div className="feature-price">
               <div className="row"><span>Einfache Pédicure</span><span className="price">85.–</span></div>
@@ -242,6 +240,8 @@ export default async function HomePageDE() {
                 Haben Sie Mühe, sich fortzubewegen? Auf Anfrage hole ich Sie zu Hause ab, verwöhne Ihre Füsse
                 im Institut und bringe Sie danach wieder nach Hause.
               </p>
+              <p className="feature-note">Professionelle, sterilisierte Instrumente und Einwegklingen.</p>
+              <p className="feature-note">Keine podologischen Behandlungen für Risikopatienten (z. B. bei Diabetes).</p>
             </div>
           </div>
         </div>
