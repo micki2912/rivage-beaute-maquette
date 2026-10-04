@@ -71,6 +71,10 @@ const FAQ_ITEMS = [
     a: "Oui — sur demande, Béatrice vient vous chercher à votre domicile, s'occupe de vos pieds à l'institut, puis vous raccompagne chez vous.",
   },
   {
+    q: 'Y a-t-il une place de parc ?',
+    a: "Oui, une place de parc gratuite se trouve devant l'institut.",
+  },
+  {
     q: 'Livrez-vous les produits de la boutique ?',
     a: "Oui, à votre adresse, réglé sur facture — comme à l'institut.",
   },
@@ -219,6 +223,8 @@ export default async function HomePage() {
                 <li>Traitement des cors</li>
                 <li>Correction des ongles incarnés</li>
               </ul>
+              <p className="feature-note">Instruments professionnels stérilisés et lames à usage unique.</p>
+              <p className="feature-note">Pas de soins podologiques pour les patients à risque (p. ex. diabétiques).</p>
             </div>
             <div className="feature-price">
               <div className="row"><span>Pédicure simple</span><span className="price">85.–</span></div>
@@ -454,6 +460,8 @@ export default async function HomePage() {
                 <dd><a href="mailto:rivage@bluewin.ch">rivage@bluewin.ch</a></dd>
                 <dt>Horaires</dt>
                 <dd>Uniquement sur rendez-vous</dd>
+                <dt>Parking</dt>
+                <dd>Place de parc gratuite devant l&apos;institut</dd>
                 <dt>Instagram</dt>
                 <dd><a href="https://www.instagram.com/bea.trice03" target="_blank" rel="noopener">@bea.trice03</a></dd>
               </dl>

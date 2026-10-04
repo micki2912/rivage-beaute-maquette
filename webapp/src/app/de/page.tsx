@@ -79,6 +79,10 @@ const FAQ_ITEMS = [
     a: 'Ja — auf Anfrage holt Béatrice Sie zu Hause ab, verwöhnt Ihre Füsse im Institut und bringt Sie danach wieder nach Hause.',
   },
   {
+    q: 'Gibt es einen Parkplatz?',
+    a: 'Ja, direkt vor dem Institut steht ein kostenloser Parkplatz zur Verfügung.',
+  },
+  {
     q: 'Liefern Sie die Shop-Produkte?',
     a: 'Ja, an Ihre Adresse, Zahlung per Rechnung — wie im Institut.',
   },
@@ -227,6 +231,8 @@ export default async function HomePageDE() {
                 <li>Behandlung von Hühneraugen</li>
                 <li>Korrektur eingewachsener Nägel</li>
               </ul>
+              <p className="feature-note">Professionelle, sterilisierte Instrumente und Einwegklingen.</p>
+              <p className="feature-note">Keine podologischen Behandlungen für Risikopatienten (z. B. bei Diabetes).</p>
             </div>
             <div className="feature-price">
               <div className="row"><span>Einfache Pédicure</span><span className="price">85.–</span></div>
@@ -466,6 +472,8 @@ export default async function HomePageDE() {
                 <dd><a href="mailto:rivage@bluewin.ch">rivage@bluewin.ch</a></dd>
                 <dt>Öffnungszeiten</dt>
                 <dd>Nur nach Vereinbarung</dd>
+                <dt>Parkplatz</dt>
+                <dd>Kostenloser Parkplatz vor dem Institut</dd>
                 <dt>Instagram</dt>
                 <dd><a href="https://www.instagram.com/bea.trice03" target="_blank" rel="noopener">@bea.trice03</a></dd>
               </dl>

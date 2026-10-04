@@ -447,6 +447,7 @@
     color:color-mix(in srgb, var(--feature-ink) 78%, transparent);
   }
   .feature-list li{ margin-top:.35rem; }
+  .feature .feature-note{ font-size:.88rem; margin-top:.6rem; }
   .feature.reverse .feature-price{ order:-1; }
   .feature-price{
     border:1px solid color-mix(in srgb, var(--feature-ink) 30%, transparent);
