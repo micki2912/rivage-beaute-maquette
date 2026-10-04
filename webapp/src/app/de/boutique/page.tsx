@@ -3,6 +3,7 @@ import ProductCard from '@/components/ProductCard'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { SITE_URL } from '@/lib/site'
+import { categoryLabel } from '@/lib/categories'
 
 export const metadata: Metadata = {
   title: { absolute: 'Online-Shop — Rivage Beauté' },
@@ -45,7 +46,7 @@ export default async function BoutiquePageDE() {
       {grouped.map(([category, items]) => (
         <section className="shop-category" key={category}>
           <div className="wrap">
-            <h2>{category}</h2>
+            <h2>{categoryLabel(category, 'de')}</h2>
             <div className="shop-grid">
               {items.map((p) => (
                 <ProductCard key={p.id} product={p} lang="de" />
