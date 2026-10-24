@@ -134,7 +134,7 @@ export default async function HomePageDE() {
             <h1>
               Zwischen drei Seen,
               <br />
-              ein Moment nur für <em>Sie</em>.
+              ein Augenblick nur für <em>Sie</em>.
             </h1>
             <p className="lede">
               Gesichtsbehandlungen, Maniküre, Pédicure und Lymphdrainage in einem Institut mit persönlicher
