@@ -347,10 +347,9 @@ export default async function HomePageDE() {
               <p className="eyebrow">Pressothérapie</p>
               <h2>Lymphdrainage, ganz mühelos.</h2>
               <p>
-                Ein sanfter, rhythmischer Druck durch Manschetten an den Füssen, Beinen, am Bauch und an den
-                Armen kurbelt die Durchblutung an und lindert das Gefühl schwerer Beine. Fünfundvierzig
-                Minuten genügen, um den Unterschied zu spüren – als Kur angewendet, hält der Effekt noch
-                länger an.
+                Ein sanfter, rhythmischer Druck durch Manschetten an den Füssen, Beinen, Bauch und Arme
+                kurbelt die Durchblutung an und lindert das Gefühl schwerer Beine. Fünfundvierzig Minuten
+                genügen, um den Unterschied zu spüren — als Kur angewendet, hält der Effekt noch länger an.
               </p>
             </div>
             <div className="feature-price">
