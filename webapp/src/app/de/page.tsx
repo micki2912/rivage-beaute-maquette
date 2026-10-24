@@ -344,17 +344,18 @@ export default async function HomePageDE() {
         <div className="wrap">
           <div className="feature">
             <div>
-              <p className="eyebrow">Pressotherapie</p>
-              <h2>Lymphdrainage, ganz ohne Aufwand.</h2>
+              <p className="eyebrow">Pressothérapie</p>
+              <h2>Lymphdrainage, ganz mühelos.</h2>
               <p>
-                Ein sanfter, rhythmischer Druck durch Manschetten an den Beinen regt die Durchblutung an und
-                lindert das Gefühl schwerer Beine. Schon fünfundvierzig Minuten reichen, um den Unterschied
-                zu spüren — bei einer Kur hält die Wirkung länger an.
+                Ein sanfter, rhythmischer Druck durch Manschetten an den Füssen, Beinen, am Bauch und an den
+                Armen kurbelt die Durchblutung an und lindert das Gefühl schwerer Beine. Fünfundvierzig
+                Minuten genügen, um den Unterschied zu spüren – als Kur angewendet, hält der Effekt noch
+                länger an.
               </p>
             </div>
             <div className="feature-price">
-              <div className="row"><span>45-minütige Sitzung</span><span className="price">70.–</span></div>
-              <div className="row"><span>Kur mit 8 Sitzungen<br /><small>1. Sitzung gratis</small></span><span className="price highlight">480.–</span></div>
+              <div className="row"><span>Behandlung von 45 Minuten</span><span className="price">70.–</span></div>
+              <div className="row"><span>Abonnement von 8 Behandlungen<br /><small>(Die 1. Behandlung ist geschenkt)</small></span><span className="price highlight">480.–</span></div>
               <a href={BOOKING_URL} target="_blank" rel="noopener" className="btn light">Termin buchen</a>
             </div>
           </div>
