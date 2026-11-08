@@ -9,10 +9,12 @@ export default function AddToCartButton({
   name,
   price,
   lang = 'fr',
+  onAdd,
 }: {
   name: string
   price: number
   lang?: 'fr' | 'de'
+  onAdd?: () => void
 }) {
   const { addItem, openCart } = useCart()
   const [added, setAdded] = useState(false)
@@ -24,6 +26,7 @@ export default function AddToCartButton({
       className={`btn small add-to-cart${added ? ' is-added' : ''}`}
       onClick={() => {
         addItem(name, price)
+        onAdd?.()
         openCart()
         setAdded(true)
         setTimeout(() => setAdded(false), 1400)

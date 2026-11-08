@@ -67,11 +67,12 @@ function readProductFields(formData: FormData) {
   const price = parseFloat(String(formData.get('price') || '0'))
   const category = String(formData.get('category') || 'Autres').trim() || 'Autres'
   const description = String(formData.get('description') || '').trim() || null
+  const description_de = String(formData.get('description_de') || '').trim() || null
 
   if (!name) throw new Error('Le nom du produit est requis.')
   if (!Number.isFinite(price) || price < 0) throw new Error('Prix invalide.')
 
-  return { name, price, category, description }
+  return { name, price, category, description, description_de }
 }
 
 // ---------- product CRUD ----------

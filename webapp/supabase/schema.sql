@@ -8,11 +8,15 @@ create table if not exists public.products (
   price numeric(10, 2) not null,
   category text not null default 'Autres',
   description text,
+  description_de text,
   image_url text,
   sort_order integer not null default 0,
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );
+
+-- Existing installs created before the German description was added.
+alter table public.products add column if not exists description_de text;
 
 alter table public.products enable row level security;
 

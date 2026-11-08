@@ -68,8 +68,13 @@ export default function ProductForm({
       </div>
 
       <div className="form-row">
-        <label htmlFor="description">Description (optionnel)</label>
-        <textarea id="description" name="description" rows={3} defaultValue={product?.description ?? ''} />
+        <label htmlFor="description">Description en français (optionnel)</label>
+        <textarea id="description" name="description" rows={5} defaultValue={product?.description ?? ''} />
+      </div>
+
+      <div className="form-row">
+        <label htmlFor="description_de">Description en allemand — Beschreibung (optionnel)</label>
+        <textarea id="description_de" name="description_de" rows={5} defaultValue={product?.description_de ?? ''} />
       </div>
 
       <div className="form-row">
