@@ -513,6 +513,20 @@
   .shop-cta{ text-align:center; margin-top:clamp(2rem, 4vw, 2.8rem); }
   .shop-grid-teaser{ grid-template-columns:repeat(4, 1fr); margin-top:clamp(2rem, 4vw, 2.8rem); }
 
+  /* ---------- "popular" badge ---------- */
+  .badge-popular{
+    position:absolute; top:.6rem; left:.6rem; z-index:1;
+    display:inline-flex; align-items:center; gap:.3rem;
+    padding:.28rem .6rem; border-radius:999px;
+    background:#FFD34D; color:#2B2100;
+    font-size:.7rem; font-weight:600; letter-spacing:.05em; text-transform:uppercase; line-height:1;
+    box-shadow:0 2px 8px -2px rgba(43,33,0,.35);
+  }
+  .badge-popular.badge-inline{
+    position:static; margin-bottom:.7rem; box-shadow:none;
+  }
+  .admin-product-name .badge-popular.badge-inline{ margin:0 0 0 .5rem; vertical-align:middle; }
+
   /* ---------- product details dialog ---------- */
   .shop-more{
     align-self:flex-start; text-align:left;
@@ -876,6 +890,11 @@
   font-family:inherit; font-size:.92rem; resize:vertical;
 }
 .form-row textarea:focus{ outline:2px solid var(--accent); outline-offset:1px; border-color:var(--accent); }
+.form-row label.admin-check{
+  display:flex; align-items:center; gap:.7rem; cursor:pointer;
+  text-transform:none; letter-spacing:0; font-size:.92rem; color:var(--ink); margin-bottom:0;
+}
+.form-row label.admin-check input{ width:1.1rem; height:1.1rem; padding:0; border:0; margin:0; accent-color:var(--accent); }
 .form-row input[type="file"]{ padding:.5rem 0; border:none; background:none; }
 .form-row select{
   width:100%; padding:.65rem .8rem; border:1px solid var(--line-strong);

@@ -78,6 +78,13 @@ export default function ProductForm({
       </div>
 
       <div className="form-row">
+        <label className="admin-check" htmlFor="is_popular">
+          <input id="is_popular" name="is_popular" type="checkbox" defaultChecked={product?.is_popular ?? false} />
+          <span>Produit populaire — affiche le jeton « ★ Populaire » dans la boutique</span>
+        </label>
+      </div>
+
+      <div className="form-row">
         <label htmlFor="image">Photo {product ? '(laisser vide pour garder la photo actuelle)' : ''}</label>
         <input
           id="image"

@@ -9,6 +9,7 @@ create table if not exists public.products (
   category text not null default 'Autres',
   description text,
   description_de text,
+  is_popular boolean not null default false,
   image_url text,
   sort_order integer not null default 0,
   created_at timestamptz not null default now(),
@@ -17,6 +18,7 @@ create table if not exists public.products (
 
 -- Existing installs created before the German description was added.
 alter table public.products add column if not exists description_de text;
+alter table public.products add column if not exists is_popular boolean not null default false;
 
 alter table public.products enable row level security;
 

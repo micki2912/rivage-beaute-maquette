@@ -5,6 +5,7 @@ export type Product = {
   category: string
   description: string | null
   description_de: string | null
+  is_popular: boolean
   image_url: string | null
   sort_order: number
   created_at: string

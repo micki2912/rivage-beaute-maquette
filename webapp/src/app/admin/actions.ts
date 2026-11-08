@@ -68,11 +68,12 @@ function readProductFields(formData: FormData) {
   const category = String(formData.get('category') || 'Autres').trim() || 'Autres'
   const description = String(formData.get('description') || '').trim() || null
   const description_de = String(formData.get('description_de') || '').trim() || null
+  const is_popular = formData.get('is_popular') === 'on'
 
   if (!name) throw new Error('Le nom du produit est requis.')
   if (!Number.isFinite(price) || price < 0) throw new Error('Prix invalide.')
 
-  return { name, price, category, description, description_de }
+  return { name, price, category, description, description_de, is_popular }
 }
 
 // ---------- product CRUD ----------

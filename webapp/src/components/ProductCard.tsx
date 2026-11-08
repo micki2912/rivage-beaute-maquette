@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import AddToCartButton from '@/components/AddToCartButton'
 import ProductDetails from '@/components/ProductDetails'
+import PopularBadge from '@/components/PopularBadge'
 import type { Product } from '@/lib/types'
 
 export default function ProductCard({ product, lang = 'fr' }: { product: Product; lang?: 'fr' | 'de' }) {
@@ -17,9 +18,10 @@ export default function ProductCard({ product, lang = 'fr' }: { product: Product
             sizes="(max-width: 520px) 50vw, (max-width: 900px) 33vw, 25vw"
             style={{ objectFit: 'cover' }}
           />
+          {product.is_popular && <PopularBadge lang={lang} />}
         </div>
       ) : (
-        <div className="shop-swatch" />
+        <div className="shop-swatch">{product.is_popular && <PopularBadge lang={lang} />}</div>
       )}
       <h3>{product.name}</h3>
       {description && (
@@ -28,6 +30,7 @@ export default function ProductCard({ product, lang = 'fr' }: { product: Product
           price={product.price}
           imageUrl={product.image_url}
           description={description}
+          popular={product.is_popular}
           lang={lang}
         />
       )}

@@ -2,6 +2,7 @@ import AdminShell from '@/components/AdminShell'
 import { getProducts, groupByCategory } from '@/lib/products'
 import { deleteProduct } from '@/app/admin/actions'
 import DeleteProductButton from '@/components/DeleteProductButton'
+import PopularBadge from '@/components/PopularBadge'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -40,7 +41,9 @@ export default async function AdminDashboard() {
                   )}
                 </div>
                 <div className="admin-product-info">
-                  <p className="admin-product-name">{p.name}</p>
+                  <p className="admin-product-name">
+                    {p.name} {p.is_popular && <PopularBadge inline />}
+                  </p>
                   <p className="admin-product-price">CHF {p.price.toFixed(2)}</p>
                 </div>
                 <div className="admin-product-actions">

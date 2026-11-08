@@ -3,6 +3,7 @@
 import { useRef } from 'react'
 import Image from 'next/image'
 import AddToCartButton from '@/components/AddToCartButton'
+import PopularBadge from '@/components/PopularBadge'
 
 const TEXT = {
   fr: { more: 'Détails', close: 'Fermer' },
@@ -25,12 +26,14 @@ export default function ProductDetails({
   price,
   imageUrl,
   description,
+  popular = false,
   lang = 'fr',
 }: {
   name: string
   price: number
   imageUrl: string | null
   description: string
+  popular?: boolean
   lang?: 'fr' | 'de'
 }) {
   const dialogRef = useRef<HTMLDialogElement>(null)
@@ -60,6 +63,7 @@ export default function ProductDetails({
             )}
           </div>
           <div className="product-dialog-text">
+            {popular && <PopularBadge lang={lang} inline />}
             <h3>{name}</h3>
             <p className="shop-price">CHF {price.toFixed(2)}</p>
             {subtitle && <p className="product-dialog-subtitle">{subtitle}</p>}
