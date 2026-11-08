@@ -6,7 +6,7 @@ import Image from 'next/image'
 import type { Metadata } from 'next'
 import { getProducts } from '@/lib/products'
 import { pickFeatured } from '@/lib/featured'
-import { SITE_URL } from '@/lib/site'
+import { SITE_URL, PHONE_TEL, PHONE_DISPLAY, GOOGLE_RATING, GOOGLE_REVIEWS_URL } from '@/lib/site'
 
 const title = 'Rivage Beauté — Wellness-Institut, Praz (Vully)'
 const description =
@@ -144,6 +144,14 @@ export default async function HomePageDE() {
                 Behandlungen entdecken
               </a>
             </div>
+            <p className="hero-proof">
+              <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener">
+                <span className="stars" aria-hidden="true">★★★★★</span> {GOOGLE_RATING}/5 auf Google
+              </a>
+            </p>
+            <p className="hero-call">
+              oder rufen Sie uns an: <a href={PHONE_TEL}>{PHONE_DISPLAY}</a>
+            </p>
             <div className="hero-facts">
               <div className="hero-fact"><b>33 Jahre</b><span>Erfahrung</span></div>
               <div className="hero-fact"><b>1788</b><span>Praz, Vully</span></div>
@@ -237,6 +245,9 @@ export default async function HomePageDE() {
               <p className="pickup-note">
                 Sie sind nicht mobil? Auf Wunsch hole ich Sie gerne zu Hause ab, pflege Ihre Füsse im
                 Institut und bringe Sie anschliessend wieder nach Hause.
+              </p>
+              <p className="feature-call">
+                Rufen Sie uns an: <a href={PHONE_TEL}>{PHONE_DISPLAY}</a>
               </p>
               <p className="feature-note">Professionelle, sterilisierte Instrumente und Einwegklingen.</p>
               <p className="feature-note">Keine podologischen Behandlungen für Risikopatienten (z. B. bei Diabetes).</p>
@@ -352,7 +363,7 @@ export default async function HomePageDE() {
             </div>
             <div className="feature-price">
               <div className="row"><span>Behandlung von 45 Minuten</span><span className="price">70.–</span></div>
-              <div className="row"><span>Abonnement von 8 Behandlungen<br /><small>(Die 1. Behandlung ist geschenkt)</small></span><span className="price highlight">480.–</span></div>
+              <div className="row"><span>Abonnement von 8 Behandlungen<br /><small>(Die 1. Behandlung ist geschenkt)</small><br /><small>statt 560.– : 80.– Ersparnis</small></span><span className="price highlight">480.–</span></div>
               <a href={BOOKING_URL} target="_blank" rel="noopener" className="btn light">Termin buchen</a>
             </div>
           </div>

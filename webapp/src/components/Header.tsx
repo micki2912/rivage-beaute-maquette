@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useCart } from '@/components/CartContext'
+import { PHONE_TEL, PHONE_DISPLAY } from '@/lib/site'
 
 const BOOKING_URL_FR =
   'https://booking.localsearch.ch/bookings/institut-de-beaute-onglerie-rivage-pour-elle-lui/services?locale=fr'
@@ -14,12 +15,12 @@ const BOOKING_URL_DE =
 const TEXT = {
   fr: {
     institut: 'Institut', pedicure: 'Pédicure', soins: 'Soins', boutique: 'Boutique', contact: 'Contact',
-    find: 'Nous trouver', rdvFull: 'Prendre rendez-vous', rdvShort: 'RDV', cart: 'Ouvrir le panier',
+    call: 'Appeler', rdvFull: 'Prendre rendez-vous', rdvShort: 'RDV', cart: 'Ouvrir le panier',
     menu: 'Ouvrir le menu', gift: 'Bons cadeaux', faq: 'FAQ',
   },
   de: {
     institut: 'Institut', pedicure: 'Pediküre', soins: 'Behandlungen', boutique: 'Shop', contact: 'Kontakt',
-    find: 'So finden Sie uns', rdvFull: 'Termin buchen', rdvShort: 'Termin', cart: 'Warenkorb öffnen',
+    call: 'Anrufen', rdvFull: 'Termin buchen', rdvShort: 'Termin', cart: 'Warenkorb öffnen',
     menu: 'Menü öffnen', gift: 'Gutscheine', faq: 'FAQ',
   },
 } as const
@@ -68,7 +69,12 @@ export default function Header({ lang = 'fr' }: { lang?: 'fr' | 'de' }) {
             <Link href={otherLangHref} className="lang-switch" hrefLang={lang === 'de' ? 'fr' : 'de'}>
               {lang === 'de' ? 'FR' : 'DE'}
             </Link>
-            <Link href={`${prefix}/#contact`} className="btn ghost small">{t.find}</Link>
+            <a href={PHONE_TEL} className="call-link" aria-label={`${t.call} ${PHONE_DISPLAY}`} title={`${t.call} ${PHONE_DISPLAY}`}>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              <span className="call-num">{PHONE_DISPLAY}</span>
+            </a>
             <a href={bookingUrl} target="_blank" rel="noopener" className="btn small">
               <span className="rdv-full">{t.rdvFull}</span>
               <span className="rdv-short">{t.rdvShort}</span>
@@ -101,6 +107,10 @@ export default function Header({ lang = 'fr' }: { lang?: 'fr' | 'de' }) {
         <Link href={`${prefix}/#cadeau`} onClick={() => setMenuOpen(false)}>{t.gift}</Link>
         <Link href={`${prefix}/#faq`} onClick={() => setMenuOpen(false)}>{t.faq}</Link>
         <Link href={`${prefix}/#contact`} onClick={() => setMenuOpen(false)}>{t.contact}</Link>
+        <a href={PHONE_TEL} className="mobile-call">{t.call} — {PHONE_DISPLAY}</a>
+        <Link href={otherLangHref} className="mobile-lang" hrefLang={lang === 'de' ? 'fr' : 'de'} onClick={() => setMenuOpen(false)}>
+          {lang === 'de' ? 'Français' : 'Deutsch'}
+        </Link>
       </div>
     </>
   )

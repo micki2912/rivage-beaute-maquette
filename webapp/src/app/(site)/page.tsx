@@ -5,7 +5,7 @@ import WaveDivider from '@/components/WaveDivider'
 import Image from 'next/image'
 import { getProducts } from '@/lib/products'
 import { pickFeatured } from '@/lib/featured'
-import { SITE_URL } from '@/lib/site'
+import { SITE_URL, PHONE_TEL, PHONE_DISPLAY, GOOGLE_RATING, GOOGLE_REVIEWS_URL } from '@/lib/site'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -137,6 +137,14 @@ export default async function HomePage() {
                 Découvrir les soins
               </a>
             </div>
+            <p className="hero-proof">
+              <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener">
+                <span className="stars" aria-hidden="true">★★★★★</span> {GOOGLE_RATING}/5 sur Google
+              </a>
+            </p>
+            <p className="hero-call">
+              ou appelez-nous : <a href={PHONE_TEL}>{PHONE_DISPLAY}</a>
+            </p>
             <div className="hero-facts">
               <div className="hero-fact"><b>33 ans</b><span>d&apos;expérience</span></div>
               <div className="hero-fact"><b>1788</b><span>Praz, Vully</span></div>
@@ -226,6 +234,9 @@ export default async function HomePage() {
               <p className="pickup-note">
                 Un souci pour vous déplacer ? Sur demande, je viens vous chercher à votre domicile, je
                 m&apos;occupe de vos pieds à l&apos;institut, puis je vous raccompagne chez vous.
+              </p>
+              <p className="feature-call">
+                Pour en parler : <a href={PHONE_TEL}>{PHONE_DISPLAY}</a>
               </p>
               <p className="feature-note">Instruments professionnels stérilisés et lames à usage unique.</p>
               <p className="feature-note">Pas de soins podologiques pour les patients à risque (p. ex. diabétiques).</p>
@@ -337,7 +348,7 @@ export default async function HomePage() {
             </div>
             <div className="feature-price">
               <div className="row"><span>Séance de 45 minutes</span><span className="price">70.–</span></div>
-              <div className="row"><span>Cure de 8 séances<br /><small>1ère séance offerte</small></span><span className="price highlight">480.–</span></div>
+              <div className="row"><span>Cure de 8 séances<br /><small>1ère séance offerte</small><br /><small>au lieu de 560.– : 80.– d&apos;économie</small></span><span className="price highlight">480.–</span></div>
               <a href={BOOKING_URL} target="_blank" rel="noopener" className="btn light">Prendre rendez-vous</a>
             </div>
           </div>

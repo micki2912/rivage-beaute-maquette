@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { PHONE_TEL, PHONE_DISPLAY } from '@/lib/site'
 
 const TEXT = {
   fr: {
@@ -49,6 +50,7 @@ export default function Footer({ lang = 'fr' }: { lang?: 'fr' | 'de' }) {
               </a>
             </li>
           </ul>
+          <a href={PHONE_TEL} className="foot-phone">{PHONE_DISPLAY}</a>
           <p>
             {t.copyright} · <Link href="/admin">{t.pro}</Link>
           </p>
