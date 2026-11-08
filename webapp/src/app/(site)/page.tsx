@@ -186,7 +186,7 @@ export default async function HomePage() {
               </div>
               <div>
                 <p className="eyebrow">Produits</p>
-                <p>Gammes suisses et professionnelles : JPROSSELET, Artepil, Stagecolor, OPI.</p>
+                <p>Gammes professionnelles suisses et internationales : JPROSSELET, Artepil, Stagecolor, OPI.</p>
               </div>
               <div>
                 <p className="eyebrow">Rythme</p>
