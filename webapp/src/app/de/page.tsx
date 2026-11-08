@@ -179,22 +179,24 @@ export default async function HomePageDE() {
           </div>
           <div>
             <p className="eyebrow">Das Institut</p>
-            <h2>Ein Ufer der Ruhe, eine sichere Hand.</h2>
-            <p className="quote">«Jede Behandlung beginnt mit Zuhören — der Rest ergibt sich von selbst.»</p>
+            <h2>Ein Ufer der Ruhe. Eine Hand, die pflegt.</h2>
+            <p className="quote">Rivage in Praz — Ihr exklusiver Rückzugsort für Kosmetik und Fusspflege.</p>
             <p className="lede">
-              Kosmetikerin und diplomierte Pédicure, hat Béatrice Rivage in Praz gegründet — einem Dorf
-              zwischen den Seen von Murten, Neuenburg und Biel. Hier gibt es keine Kette, keine
-              durchgetakteten Termine: ein Institut, das darauf ausgelegt ist, jeweils nur eine Person zu
-              empfangen, mit professionellen Produkten, die auf Dauer ausgelegt sind.
+              Als zertifizierte Kosmetikerin und Fusspflegerin hat Béatrice Rivage in Praz gegründet — einem
+              idyllischen Dorf, eingebettet zwischen dem Murten-, Neuenburger- und Bielersee. Hier erwarten
+              Sie keine Massenabfertigung und keine Termine im Minutentakt. Das Studio ist als exklusiver
+              Rückzugsort konzipiert, um immer nur eine Person einzeln und ganz persönlich zu empfangen. Für
+              die Behandlungen werden ausschliesslich professionelle Produkte verwendet, die auf eine
+              langanhaltende Wirkung setzen.
             </p>
             <div className="facts-row">
               <div>
                 <p className="eyebrow">Erfahrung</p>
-                <p>Mehr als dreiunddreissig Jahre Praxis in Kosmetik und Pédicure.</p>
+                <p>Über 33 Jahre Erfahrung in der Kosmetik und Fusspflege.</p>
               </div>
               <div>
                 <p className="eyebrow">Produkte</p>
-                <p>Professionelle Schweizer Linien: JPROSSELET, Artepil, Stagecolor, OPI.</p>
+                <p>Professionelle Schweizer und internationale Qualitätsmarken: JPROSSELET, Artepil, Stagecolor, OPI.</p>
               </div>
               <div>
                 <p className="eyebrow">Ablauf</p>
@@ -220,10 +222,11 @@ export default async function HomePageDE() {
           <div className="feature reverse">
             <div>
               <p className="eyebrow">Pédicure</p>
-              <h2>Fusspflege von einer echten diplomierten Pédicure.</h2>
+              <h2>Fusspflege von einer diplomierten Fachperson.</h2>
               <p>
-                Eine diplomierte Pédicure geht weit über Nagellack hinaus — eine präzise, fachkundige
-                Behandlung für Füsse, die den ganzen Tag Gewicht tragen, nicht nur für die Farbe.
+                Eine diplomierte Fusspflege geht weit über Nagellack hinaus — sie bietet eine präzise,
+                fachgerechte Behandlung für Füsse, die tagtäglich Höchstleistungen erbringen. Hier steht die
+                Tiefenpflege im Fokus, nicht nur die Farbe.
               </p>
               <p className="feature-list-title">Nagelschnitt und -pflege:</p>
               <ul className="feature-list">
@@ -237,8 +240,8 @@ export default async function HomePageDE() {
               <div className="row"><span>Pédicure &amp; Semi-permanent-Lack</span><span className="price highlight">95.–</span></div>
               <a href={BOOKING_URL} target="_blank" rel="noopener" className="btn light">Termin buchen</a>
               <p className="pickup-note">
-                Haben Sie Mühe, sich fortzubewegen? Auf Anfrage hole ich Sie zu Hause ab, verwöhne Ihre Füsse
-                im Institut und bringe Sie danach wieder nach Hause.
+                Sie sind nicht mobil? Auf Wunsch hole ich Sie gerne zu Hause ab, pflege Ihre Füsse im
+                Institut und bringe Sie anschliessend wieder nach Hause.
               </p>
               <p className="feature-note">Professionelle, sterilisierte Instrumente und Einwegklingen.</p>
               <p className="feature-note">Keine podologischen Behandlungen für Risikopatienten (z. B. bei Diabetes).</p>
@@ -252,11 +255,11 @@ export default async function HomePageDE() {
           <div className="section-head">
             <div>
               <p className="eyebrow">Die Behandlungen</p>
-              <h2>Eine Karte, wie am Ufer des Sees.</h2>
+              <h2>Ein Angebot wie eine Brise am Ufer.</h2>
             </div>
             <p className="lede">
-              Klare Preise, sorgfältig ausgewählte Behandlungen — vom Gesicht über die Hände bis zur
-              Warmwachs-Epilation.
+              Klare Tarife, sorgfältig ausgewählte Behandlungen — von der Gesichtspflege über die Hände bis
+              hin zur Haarentfernung mit Warmwachs.
             </p>
           </div>
 
