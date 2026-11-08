@@ -4,7 +4,7 @@ import ProductCard from '@/components/ProductCard'
 import WaveDivider from '@/components/WaveDivider'
 import Image from 'next/image'
 import { getProducts } from '@/lib/products'
-import type { Product } from '@/lib/types'
+import { pickFeatured } from '@/lib/featured'
 import { SITE_URL } from '@/lib/site'
 import type { Metadata } from 'next'
 
@@ -101,14 +101,9 @@ const faqStructuredData = {
 // New pick of products on every visit/refresh, rather than a cached static page.
 export const dynamic = 'force-dynamic'
 
-function pickRandom(products: Product[], count: number) {
-  const shuffled = [...products].sort(() => Math.random() - 0.5)
-  return shuffled.slice(0, count)
-}
-
 export default async function HomePage() {
   const products = await getProducts()
-  const featured = pickRandom(products, 4)
+  const featured = pickFeatured(products, 4)
 
   return (
     <>

@@ -5,7 +5,7 @@ import WaveDivider from '@/components/WaveDivider'
 import Image from 'next/image'
 import type { Metadata } from 'next'
 import { getProducts } from '@/lib/products'
-import type { Product } from '@/lib/types'
+import { pickFeatured } from '@/lib/featured'
 import { SITE_URL } from '@/lib/site'
 
 const title = 'Rivage Beauté — Wellness-Institut, Praz (Vully)'
@@ -108,14 +108,9 @@ const faqStructuredData = {
 
 export const dynamic = 'force-dynamic'
 
-function pickRandom(products: Product[], count: number) {
-  const shuffled = [...products].sort(() => Math.random() - 0.5)
-  return shuffled.slice(0, count)
-}
-
 export default async function HomePageDE() {
   const products = await getProducts()
-  const featured = pickRandom(products, 4)
+  const featured = pickFeatured(products, 4)
 
   return (
     <>
